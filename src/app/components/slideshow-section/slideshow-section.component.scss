@@ -37,21 +37,43 @@
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
     z-index: 10;
-  }
 
-  .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: none;
-    background: #bbb;
-    cursor: pointer;
-    transition: background 0.3s;
+    // Estilo general para botones redondos
+    button {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background-color: #bbb;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s ease;
 
-    &.active {
-      background: #007ad9;
+      &:hover:not(:disabled) {
+        background-color: #d0d0d0;
+        transform: scale(1.05);
+      }
+
+      &:disabled {
+        background-color: #bdbdbd;
+        cursor: default;
+        opacity: 0.5;
+      }
+    }
+
+    .dot {
+      background-color: #bbb;
+      padding: 0;
+      font-size: 0;
+
+      &.active {
+        background-color: #007ad9;
+      }
     }
   }
 }
