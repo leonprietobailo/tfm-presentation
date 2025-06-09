@@ -1,0 +1,48 @@
+.nav-header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  .nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+
+    a {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #333;
+      text-decoration: none;
+      position: relative;
+      padding: 0.25rem 0.5rem;
+      transition: color 0.3s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 2px;
+        background-color: #007ad9;
+        transition: width 0.3s ease;
+      }
+
+      &:hover,
+      &.active {
+        color: #007ad9;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

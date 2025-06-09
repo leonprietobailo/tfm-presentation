@@ -5,10 +5,11 @@ import { SalesTrendWidget } from "./components/dashboard/salestrendwidget";
 import { RecentActivityWidget } from "./components/dashboard/recentactivitywidget";
 import { ProductOverviewWidget } from "./components/dashboard/productoverviewwidget";
 import { AppFooter } from "./components/app.footer";
+import { NavHeaderComponent } from "./components/nav-header/nav-header.component";
 
 @Component({
   selector: 'app-root',
-  imports: [AppTopbar, StatsWidget, SalesTrendWidget, RecentActivityWidget, ProductOverviewWidget, AppFooter],
+  imports: [NavHeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
