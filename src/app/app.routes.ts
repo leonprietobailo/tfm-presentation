@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { IntroductionComponent } from './pages/introduction/introduction.component';
 
 export const routes: Routes = [
 //   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -10,4 +11,5 @@ export const routes: Routes = [
 //   { path: 'yolov8-segmentation-crop', component: Yolov8SegmentationCropComponent },
 //   { path: 'yolov8-backbone', component: Yolov8BackboneComponent },
 //   { path: 'conclusion', component: ConclusionComponent },
+{ path: 'introduction', component: IntroductionComponent }
 ];

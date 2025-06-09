@@ -1,1 +1,12 @@
-<p>slideshow-section works!</p>
+<div class="slideshow-container">
+@for (slide of slides; track i; let i = $index) {
+  <div class="slide" [class.active]="i === currentSlide">
+    <canvas #canvasElement [id]="'canvas-' + i" width="800" height="600"></canvas>
+  </div>
+}
+
+  <div class="controls">
+    <button pButton icon="pi pi-chevron-left" (click)="prev()" [disabled]="currentSlide === 0"></button>
+    <button pButton icon="pi pi-chevron-right" (click)="next()" [disabled]="currentSlide === slides.length - 1"></button>
+  </div>
+</div>
