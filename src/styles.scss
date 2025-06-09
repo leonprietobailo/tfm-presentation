@@ -583,3 +583,24 @@ body {
     }
 }
 
+
+  .p-steps {
+  /* Make active number circle blue background */
+  --p-steps-item-number-active-background: #E3E2DA;   /* blue-600 */
+  /* Make active number text white (or any contrast color) */
+  --p-steps-item-number-active-color: #004254;
+  /* Optional: change active border color */
+//   --p-steps-item-number-active-border-color: #004254;
+
+  --p-steps-item-number-border-color: #E3E2DA;
+  /* Change active label color */
+  --p-steps-item-label-active-color: #004254;
+  /* Optionally, make the separator blue as well */
+  --p-steps-separator-background: #E3E2DA;
+  --p-steps-item-number-font-size: 0.95rem;
+  --p-steps-item-number-font-weight: bold;
+}
+
+.p-steps-item-label {
+  font-size: 0.9rem;   /* adjust as needed, e.g., 0.9rem for smaller */
+}

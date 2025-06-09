@@ -1,11 +1,25 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { StepsModule } from 'primeng/steps';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-nav-header',
-  imports: [],
+  standalone: true,
+  imports: [RouterModule, StepsModule],
   templateUrl: './nav-header.component.html',
-  styleUrl: './nav-header.component.scss'
+  styleUrls: ['./nav-header.component.scss']
 })
 export class NavHeaderComponent {
-
+  items: MenuItem[] = [
+    { label: 'Home', routerLink: '/home' },
+    { label: 'Introduction', routerLink: '/introduction' },
+    { label: 'YOLO Classification', routerLink: '/yolov8-classification' },
+    { label: 'YOLO Segmentation', routerLink: '/yolov8-segmentation' },
+    { label: 'Keras Classification', routerLink: '/keras-classification' },
+    { label: 'Keras Classification + Crop', routerLink: '/yolov8-segmentation-crop' },
+    { label: 'Keras Classification + Backbone', routerLink: '/yolov8-backbone' },
+    { label: 'GradCAM', routerLink: '/yolov8-backbone' },
+    { label: 'Conclusion', routerLink: '/conclusion' }
+  ];
 }

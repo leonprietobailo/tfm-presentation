@@ -1,12 +1,7 @@
 <header class="nav-header">
-  <nav class="nav-container">
-    <a routerLink="/home" routerLinkActive="active">Home</a>
-    <a routerLink="/introduction" routerLinkActive="active">Introduction</a>
-    <a routerLink="/yolov8-classification" routerLinkActive="active">YOLOv8 Classification</a>
-    <a routerLink="/yolov8-segmentation" routerLinkActive="active">YOLOv8 Segmentation</a>
-    <a routerLink="/keras-classification" routerLinkActive="active">Keras/TensorFlow Classification</a>
-    <a routerLink="/yolov8-segmentation-crop" routerLinkActive="active">YOLOv8 Segmentation (Crop) + Keras</a>
-    <a routerLink="/yolov8-backbone" routerLinkActive="active">YOLOv8 Backbone + Keras</a>
-    <a routerLink="/conclusion" routerLinkActive="active">Conclusion</a>
-  </nav>
+  <p-steps
+    [model]="items"
+    [readonly]="false"
+    styleClass="presentation-steps"
+  ></p-steps>
 </header>

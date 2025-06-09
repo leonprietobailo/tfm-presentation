@@ -1,7 +1,7 @@
 .slideshow-wrapper {
   position: relative;
   width: 100vw;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 90px);
   overflow: hidden;
   display: flex;
 
@@ -50,7 +50,7 @@
       align-items: center;
       justify-content: center;
       border: none;
-      background-color: #bbb;
+      background-color: #c2c1b9;
       cursor: pointer;
       transition: background-color 0.3s, transform 0.2s ease;
 
@@ -60,19 +60,19 @@
       }
 
       &:disabled {
-        background-color: #bdbdbd;
+        background-color: #e3e2dacc;
         cursor: default;
         opacity: 0.5;
       }
     }
 
     .dot {
-      background-color: #bbb;
+      background-color: #E3E2DA;
       padding: 0;
       font-size: 0;
 
       &.active {
-        background-color: #007ad9;
+        background-color: #00B0BD;
       }
     }
   }
@@ -99,7 +99,7 @@
     width: 1em;
     height: 1em;
     transform: translateY(100%);
-    background: #ebebeb;
+    background: #e3e2da48;
 
     &:nth-child(2) {
       height: 1.5em;
