@@ -1,14 +1,28 @@
 <div class="slideshow-wrapper">
   <div class="slide-track">
     @for (_ of slides; track $index; let i = $index) {
-      <div class="slide" [class.active]="i === currentSlide">
-        <ng-container *ngTemplateOutlet="slides[i]"></ng-container> <!-- ✅ accedemos al array procesado -->
+      <div
+        class="slide"
+        [class.active]="i === currentSlide"
+        [class.inactive]="i !== currentSlide"
+      >
+        <ng-container *ngTemplateOutlet="slides[i]"></ng-container>
       </div>
     }
   </div>
 
-  <div class="controls">
-    <button pButton icon="pi pi-chevron-left" (click)="prev()" [disabled]="currentSlide === 0"></button>
-    <button pButton icon="pi pi-chevron-right" (click)="next()" [disabled]="currentSlide === slides.length - 1"></button>
+  <!-- Controles verticales a la derecha -->
+  <div class="controls-vertical">
+    <button pButton icon="pi pi-chevron-up" (click)="prev()" [disabled]="currentSlide === 0"></button>
+
+    @for (_ of slides; track $index; let i = $index) {
+      <button
+        class="dot"
+        (click)="goTo(i)"
+        [class.active]="i === currentSlide"
+      ></button>
+    }
+
+    <button pButton icon="pi pi-chevron-down" (click)="next()" [disabled]="currentSlide === slides.length - 1"></button>
   </div>
 </div>

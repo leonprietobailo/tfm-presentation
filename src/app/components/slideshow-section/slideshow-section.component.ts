@@ -31,6 +31,11 @@ export class SlideshowSectionComponent implements AfterContentInit {
     this.slides = this.slideTemplates.toArray();
   }
 
+  goTo(index: number) {
+  this.currentSlide = index;
+}
+
+
   next() {
     if (this.currentSlide < this.slides.length - 1) this.currentSlide++;
   }
