@@ -1,8 +1,16 @@
 <app-slideshow-section>
   <ng-template>
-    <div class="slide-content">
-      <h1>Welcome</h1>
-      <p>This is slide 1.</p>
+    <div class="slide-content split-slide">
+      <div class="text-column">
+        <h1>Model Overview</h1>
+        <p>
+          This model leverages the power of YOLOv8 for segmentation combined with a custom TensorFlow classifier.
+          The architecture is optimized for real-time processing and adaptable for various domains.
+        </p>
+      </div>
+      <div class="image-column">
+        <img src="assets/images/cat.png" alt="Model Diagram" />
+      </div>
     </div>
   </ng-template>
 
