@@ -1,0 +1,34 @@
+.slideshow-wrapper {
+  width: 100vw;
+  height: calc(100vh - 80px);
+  position: relative;
+  overflow: hidden;
+
+  .slide-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .slide {
+    display: none;
+    height: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    overflow: auto;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .controls {
+    position: absolute;
+    bottom: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+  }
+}

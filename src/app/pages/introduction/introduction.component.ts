@@ -9,5 +9,5 @@ import { SlideshowSectionComponent } from "../../components/slideshow-section/sl
   styleUrl: './introduction.component.scss'
 })
 export class IntroductionComponent {
-
+ currentSlide = 0
 }

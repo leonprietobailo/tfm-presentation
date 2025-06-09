@@ -1,14 +1,35 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  ContentChildren,
+  QueryList,
+  TemplateRef,
+  HostBinding,
+  AfterContentInit
+} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-slideshow-section',
+  standalone: true,
+  imports: [CommonModule, ButtonModule],
   templateUrl: './slideshow-section.component.html',
-  styleUrls: ['./slideshow-section.component.scss'],
-  standalone: true
+  styleUrls: ['./slideshow-section.component.scss']
 })
-export class SlideshowSectionComponent {
-  slides = Array(3).fill(null);  // You can customize this to dynamically create slides
+export class SlideshowSectionComponent implements AfterContentInit {
   currentSlide = 0;
+  slides: TemplateRef<any>[] = [];
+
+  @ContentChildren(TemplateRef) slideTemplates!: QueryList<TemplateRef<any>>;
+
+  @HostBinding('style.--current-slide')
+  get currentSlideIndex(): string {
+    return this.currentSlide.toString();
+  }
+
+  ngAfterContentInit(): void {
+    this.slides = this.slideTemplates.toArray();
+  }
 
   next() {
     if (this.currentSlide < this.slides.length - 1) this.currentSlide++;

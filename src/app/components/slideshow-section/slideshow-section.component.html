@@ -1,9 +1,11 @@
-<div class="slideshow-container">
-@for (slide of slides; track i; let i = $index) {
-  <div class="slide" [class.active]="i === currentSlide">
-    <canvas #canvasElement [id]="'canvas-' + i" width="800" height="600"></canvas>
+<div class="slideshow-wrapper">
+  <div class="slide-track">
+    @for (_ of slides; track $index; let i = $index) {
+      <div class="slide" [class.active]="i === currentSlide">
+        <ng-container *ngTemplateOutlet="slides[i]"></ng-container> <!-- ✅ accedemos al array procesado -->
+      </div>
+    }
   </div>
-}
 
   <div class="controls">
     <button pButton icon="pi pi-chevron-left" (click)="prev()" [disabled]="currentSlide === 0"></button>
