@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SlideshowSectionComponent } from "../../components/slideshow-section/slideshow-section.component";
+import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -9,5 +10,10 @@ import { SlideshowSectionComponent } from "../../components/slideshow-section/sl
   styleUrl: '../slide-main-styles.scss'
 })
 export class IntroductionComponent {
- currentSlide = 0;
+  constructor(private router: Router) { }
+
+  goNext() {
+    this.router.navigate(['yolo_cls']);
+  }
+
 }

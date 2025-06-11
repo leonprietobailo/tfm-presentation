@@ -1,3 +1,5 @@
+@use '../../styles/colors.scss' as c;
+
 /**
   This file should include the styles for all the slides of the page.
   The idea is that this class contains the definitions of the slide possible structures i.e.: Slide templates.
@@ -13,47 +15,108 @@
   }
 }
 
-.split-slide {
+.slide-content {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
   height: 100%;
-  gap: 2rem;
-  padding: 2rem;
 
-  .text-column {
-    flex: 1;
+
+
+  .split-slide {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 1rem;
+    height: fit-content;
+    gap: 2rem;
+    padding: 2rem;
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #1a1a1a;
+    .text-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: c.$cv-primary;
+      }
+
+      p {
+        font-size: 1.125rem;
+        line-height: 1.6;
+        color: c.$cv-text;
+        max-width: 90%;
+      }
+
+      li {
+        font-size: 1.125rem;
+        line-height: 1.6;
+        color: c.$cv-text;
+        max-width: 90%;
+      }
     }
 
-    p {
-      font-size: 1.125rem;
-      line-height: 1.6;
-      color: #444;
-      max-width: 90%;
+    .image-column {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        max-width: 100%;
+        max-height: 80%;
+        object-fit: contain;
+        border-radius: 1rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+
+// Next chapter button
+
+.next-btn-div {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+
+  .next-btn {
+    // margin-top: 1rem;
+    padding: 0.5rem 1.3rem;
+    background: transparent;
+    color: #3730a3;
+    font-size: 1.03rem;
+    font-weight: 600;
+    border: 1.5px solid c.$cv-primary;
+    border-radius: 40px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    gap: 0.5em;
+    transition: background 0.15s, c 0.15s, border 0.15s;
+
+    .arrow {
+      font-size: 1.2em;
+      transition: transform 0.15s;
+      display: inline-block;
     }
   }
 
-  .image-column {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .next-btn:hover,
+  .next-btn:focus {
+    background: c.$cv-bg-alt;
+    color: c.$cv-secondary;
+    border-color: c.$cv-secondary;
+  }
 
-    img {
-      max-width: 100%;
-      max-height: 80%;
-      object-fit: contain;
-      border-radius: 1rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
+  .next-btn:hover .arrow,
+  .next-btn:focus .arrow {
+    transform: translateX(5px);
   }
 }
