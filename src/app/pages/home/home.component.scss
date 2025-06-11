@@ -1,3 +1,5 @@
+@use '../../../styles/colors.scss' as c;
+
 .slide-home-cv {
   height: 100vh;
   width: 100vw;
@@ -10,7 +12,7 @@
 }
 
 .cv-title {
-  color: #3730a3;
+  color: c.$cv-primary;
   font-size: 3rem;
   font-weight: 800;
   text-align: center;
@@ -20,7 +22,7 @@
 }
 
 .cv-author, .cv-email, .cv-date {
-  color: #334155;
+  color: c.$cv-text;
   font-size: 1.3rem;
   text-align: center;
 }
@@ -33,7 +35,7 @@
 .cv-email {
   font-size: 1.1rem;
   font-weight: 400;
-  color: #2563eb;
+  color: c.$cv-secondary;
   margin-bottom: 0.5rem;
 }
 
@@ -41,7 +43,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #64748b;
+  color: c.$cv-text-light;
   font-size: 1.1rem;
   margin-bottom: 1.8rem;
 
@@ -55,10 +57,10 @@
 .cv-underline {
   width: 120px;
   height: 3px;
-  background: linear-gradient(90deg, #3730a3, #0ea5e9 80%);
+  background: linear-gradient(90deg, c.$cv-primary, c.$cv-accent 80%);
   margin-top: 1.2rem;
   border-radius: 2px;
-  box-shadow: 0 0 10px #818cf844;
+  @include c.cv-shadow;
 }
 
 /* Botón simple */
@@ -69,13 +71,13 @@
   color: #3730a3;
   font-size: 1.03rem;
   font-weight: 600;
-  border: 1.5px solid #3730a3;
+  border: 1.5px solid c.$cv-primary;
   border-radius: 40px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  transition: background 0.15s, color 0.15s, border 0.15s;
+  transition: background 0.15s, c 0.15s, border 0.15s;
 
   .arrow {
     font-size: 1.2em;
@@ -84,9 +86,9 @@
   }
 }
 .intro-btn:hover, .intro-btn:focus {
-  background: #f1f5ff;
-  color: #2563eb;
-  border-color: #2563eb;
+  background: c.$cv-bg-alt;
+  color: c.$cv-secondary;
+  border-color: c.$cv-secondary;
 }
 .intro-btn:hover .arrow, .intro-btn:focus .arrow {
   transform: translateX(5px);

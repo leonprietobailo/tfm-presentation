@@ -1,0 +1,34 @@
+//  Main Colour Palette: Modern palette for a computer vision project. Tech Blues and Violettes.
+
+// Main colours.
+$cv-primary:     #3730a3; // Strong Blue-violette (titles, highlited buttons)
+$cv-secondary:   #2563eb; // Pure Blue (links, accents)
+$cv-accent:      #0ea5e9; // Cyan (highlighting, visual details)
+
+// Background and borders
+$cv-bg:          #ffffff; // Main background.
+$cv-bg-alt:      #f1f5ff; // Alternative background.
+$cv-border:      #e5e7eb; // Light Grey (lines/divisions)
+$cv-shadow:      #818cf844; // Translucid blue for soft shadowing.
+
+// Text
+$cv-text:        #334155; // Dark grey for main text.
+$cv-text-light:  #64748b; // Light grey for dates, details... 
+
+// Accents and states
+$cv-green:  #22c55e; // Green success/progress
+$cv-red:    #ef4444; // Red error/alert
+$cv-yellow: #eab308; // Yellow warning
+$cv-purple: #a21caf; // Purple accent, optional.
+
+// Gradients
+$cv-gradient: linear-gradient(90deg, $cv-primary, $cv-accent 80%);
+
+// Utils
+$cv-white:   #fff;
+$cv-black:   #0f172a;
+
+// Box shadow
+@mixin cv-shadow {
+  box-shadow: 0 0 10px $cv-shadow;
+}
