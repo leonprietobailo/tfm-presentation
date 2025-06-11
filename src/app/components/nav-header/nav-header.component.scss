@@ -10,82 +10,19 @@
   padding: 0.5rem 1rem;
   padding-top: 1rem;
 
-  ::ng-deep .presentation-steps { ::ng-deep .presentation-steps {
-    .p-steps {
-      display: flex;
-      justify-content: space-between;
-      overflow-x: auto;
-      gap: 1rem;
-      width: 100%;        // Ensure steps container fills width
-    }
-
-    ul {
-      display: flex;
-      flex: 1;
-      min-width: 0;
-      width: 100%;
-      gap: 1rem;
-    }
-
-    .p-steps-item {
-      // flex: 1; // keep this off!
-      min-width: 120px;         // Minimum width for step
-      max-width: 200px;         // Maximum width for step
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      text-align: center;
-    }
-  }}
-
 }
 
 .flex-header {
   display: flex;
   align-items: center;
-  // gap: 1.5rem;
 }
 
 .steps-flex-grow {
   flex: 1;
-  // width: 100%;
-  // min-width: 0;
-  // overflow-x: auto; // Enables horizontal scroll if needed
-  // display: flex;
   align-items: center;
 
   .presentation-steps {
     width: 100%;
-    min-width: 700px; // Optional: adjust minimum width for desktop
+    min-width: 700px;
   }
-}
-
-.p-steps-item {
-  min-width: 80px;    // or whatever fits your design
-  max-width: 180px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-::ng-deep .presentation-steps .p-steps {
-  display: flex;
-  width: 100%;
-}
-
-::ng-deep .presentation-steps .p-steps ul {
-  display: flex;
-  flex: 1;
-  min-width: 0;
-  width: 100%;
-  gap: 1rem;
-}
-
-::ng-deep .presentation-steps .p-steps-item {
-  min-width: 120px;
-  max-width: 200px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  text-align: center;
 }
