@@ -10,15 +10,15 @@ import { GradcamComponent } from './pages/gradcam/gradcam.component';
 import { ConclusionComponent } from './pages/conclusion/conclusion.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent},
-  { path: 'introduction', component: IntroductionComponent },
-  { path: 'yolo_cls', component: YoloClsComponent },
-  { path: 'yolo_seg', component: YoloSegComponent },
-  { path: 'keras_cls', component: KerasClsComponent },
-  { path: 'keras_crop', component: KerasCropComponent },
-  { path: 'keras_backbone', component: KerasBackboneComponent },
-  { path: 'gradcam', component: GradcamComponent },
-  { path: 'conclusion', component: ConclusionComponent }
+  { path: '', component: HomeComponent, data: {animation: 'home'}},
+  { path: 'introduction', component: IntroductionComponent, data: {animation: 'introduction'} },
+  { path: 'yolo_cls', component: YoloClsComponent, data: {animation: 'yolo_cls'} },
+  { path: 'yolo_seg', component: YoloSegComponent, data: {animation: 'yolo_seg'} },
+  { path: 'keras_cls', component: KerasClsComponent, data: {animation: 'keras_cls'} },
+  { path: 'keras_crop', component: KerasCropComponent , data: {animation: 'keras_crop'}},
+  { path: 'keras_backbone', component: KerasBackboneComponent, data: {animation: 'keras_backbone'}},
+  { path: 'gradcam', component: GradcamComponent, data: {animation: 'gradcam'}},
+  { path: 'conclusion', component: ConclusionComponent, data: {animation: 'conclusion'} }
 ];
 
 

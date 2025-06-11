@@ -6,13 +6,18 @@ import { RecentActivityWidget } from "./components/dashboard/recentactivitywidge
 import { ProductOverviewWidget } from "./components/dashboard/productoverviewwidget";
 import { AppFooter } from "./components/app.footer";
 import { NavHeaderComponent } from "./components/nav-header/nav-header.component";
-import { RouterModule } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { slideFadeAnimation } from './route-animations';
 
 @Component({
   selector: 'app-root',
-  imports: [NavHeaderComponent, RouterModule],
+  imports: [NavHeaderComponent, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  animations: [slideFadeAnimation]
 })
 export class AppComponent {
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet?.activatedRouteData?.['animation'];
+  }
 }
