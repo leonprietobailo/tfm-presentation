@@ -1,0 +1,93 @@
+.slide-home-cv {
+  height: 100vh;
+  width: 100vw;
+//   background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+.cv-title {
+  color: #3730a3;
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin-bottom: 2.2rem;
+  text-shadow: 0 1px 0 #e0e7ff, 0 4px 14px #818cf815;
+}
+
+.cv-author, .cv-email, .cv-date {
+  color: #334155;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.cv-author {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.cv-email {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+}
+
+.cv-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-size: 1.1rem;
+  margin-bottom: 1.8rem;
+
+  .calendar-icon {
+    font-size: 1.3rem;
+    margin-right: 0.45rem;
+    vertical-align: middle;
+  }
+}
+
+.cv-underline {
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, #3730a3, #0ea5e9 80%);
+  margin-top: 1.2rem;
+  border-radius: 2px;
+  box-shadow: 0 0 10px #818cf844;
+}
+
+/* Botón simple */
+.intro-btn {
+  margin-top: 2.2rem;
+  padding: 0.5rem 1.3rem;
+  background: transparent;
+  color: #3730a3;
+  font-size: 1.03rem;
+  font-weight: 600;
+  border: 1.5px solid #3730a3;
+  border-radius: 40px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  transition: background 0.15s, color 0.15s, border 0.15s;
+
+  .arrow {
+    font-size: 1.2em;
+    transition: transform 0.15s;
+    display: inline-block;
+  }
+}
+.intro-btn:hover, .intro-btn:focus {
+  background: #f1f5ff;
+  color: #2563eb;
+  border-color: #2563eb;
+}
+.intro-btn:hover .arrow, .intro-btn:focus .arrow {
+  transform: translateX(5px);
+}
