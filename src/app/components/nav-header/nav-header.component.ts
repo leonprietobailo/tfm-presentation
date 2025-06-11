@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { StepsModule } from 'primeng/steps';
 import { MenuItem } from 'primeng/api';
@@ -13,7 +13,7 @@ import { MenuItem } from 'primeng/api';
 })
 export class NavHeaderComponent {
   items: MenuItem[] = [
-    { label: 'Home', routerLink: '/home' },
+    // { label: 'Home', routerLink: '/home' },
     { label: 'Introduction', routerLink: '/introduction' },
     { label: 'YOLO Classification', routerLink: '/yolov8-classification' },
     { label: 'YOLO Segmentation', routerLink: '/yolov8-segmentation' },
@@ -24,22 +24,4 @@ export class NavHeaderComponent {
     { label: 'Conclusion', routerLink: '/conclusion' }
   ];
 
-    @ViewChild('lottiePlayer', { static: true }) lottiePlayer!: ElementRef;
-
-  direction: 1 | -1 = 1;
-
-  ngAfterViewInit() {
-    const el = this.lottiePlayer.nativeElement;
-
-    el.addEventListener('ready', () => {
-      el.direction = 1;
-      el.play();
-    });
-
-    el.addEventListener('complete', () => {
-      this.direction *= -1;
-      el.direction = this.direction;
-      el.play();
-    });
-  }
 }

@@ -6,8 +6,8 @@ import { SlideshowSectionComponent } from "../../components/slideshow-section/sl
   selector: 'app-introduction',
   imports: [SlideshowSectionComponent],
   templateUrl: './introduction.component.html',
-  styleUrl: './introduction.component.scss'
+  styleUrl: '../slide-main-styles.scss'
 })
 export class IntroductionComponent {
- currentSlide = 0
+ currentSlide = 0;
 }
