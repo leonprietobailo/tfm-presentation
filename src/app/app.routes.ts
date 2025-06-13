@@ -8,10 +8,12 @@ import { KerasCropComponent } from './pages/keras-crop/keras-crop.component';
 import { KerasBackboneComponent } from './pages/keras-backbone/keras-backbone.component';
 import { GradcamComponent } from './pages/gradcam/gradcam.component';
 import { ConclusionComponent } from './pages/conclusion/conclusion.component';
+import { DatasetComponent } from './pages/dataset/dataset.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, data: {animation: 'home'}},
   { path: 'introduction', component: IntroductionComponent, data: {animation: 'introduction'} },
+  { path: 'dataset', component: DatasetComponent, data: {animation: 'dataset'} },
   { path: 'yolo_cls', component: YoloClsComponent, data: {animation: 'yolo_cls'} },
   { path: 'yolo_seg', component: YoloSegComponent, data: {animation: 'yolo_seg'} },
   { path: 'keras_cls', component: KerasClsComponent, data: {animation: 'keras_cls'} },

@@ -1,0 +1,179 @@
+[
+  {
+    "name": "casting_data",
+    "type": "Folder",
+    "count": 7354,
+    "size": 72306520,
+    "expanded": true,
+    "children": [
+      {
+        "name": "test",
+        "type": "Folder",
+        "count": 717,
+        "size": 7198826,
+        "children": [
+          {
+            "name": "def_front",
+            "type": "Folder",
+            "count": 453,
+            "size": 4587814,
+            "children": [
+              {
+                "name": "cast_def_0_1059.jpeg",
+                "type": "Image",
+                "size": 10701
+              },
+              {
+                "name": "cast_def_0_1063.jpeg",
+                "type": "Image",
+                "size": 9656
+              },
+              {
+                "name": "cast_def_0_108.jpeg",
+                "type": "Image",
+                "size": 11100
+              },
+              {
+                "name": "cast_def_0_1096.jpeg",
+                "type": "Image",
+                "size": 9797
+              },
+              {
+                "name": "cast_def_0_112.jpeg",
+                "type": "Image",
+                "size": 11642
+              },
+              {
+                "name": "...and 448 more",
+                "type": "Placeholder",
+                "size": null
+              }
+            ]
+          },
+          {
+            "name": "ok_front",
+            "type": "Folder",
+            "count": 262,
+            "size": 2611012,
+            "children": [
+              {
+                "name": "cast_ok_0_10.jpeg",
+                "type": "Image",
+                "size": 10690
+              },
+              {
+                "name": "cast_ok_0_1001.jpeg",
+                "type": "Image",
+                "size": 9137
+              },
+              {
+                "name": "cast_ok_0_1002.jpeg",
+                "type": "Image",
+                "size": 9869
+              },
+              {
+                "name": "cast_ok_0_1003.jpeg",
+                "type": "Image",
+                "size": 10546
+              },
+              {
+                "name": "cast_ok_0_1019.jpeg",
+                "type": "Image",
+                "size": 9564
+              },
+              {
+                "name": "...and 257 more",
+                "type": "Placeholder",
+                "size": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "train",
+        "type": "Folder",
+        "count": 6635,
+        "size": 65107694,
+        "children": [
+          {
+            "name": "def_front",
+            "type": "Folder",
+            "count": 3758,
+            "size": 37275050,
+            "children": [
+              {
+                "name": "cast_def_0_0.jpeg",
+                "type": "Image",
+                "size": 9129
+              },
+              {
+                "name": "cast_def_0_1000.jpeg",
+                "type": "Image",
+                "size": 9984
+              },
+              {
+                "name": "cast_def_0_1001.jpeg",
+                "type": "Image",
+                "size": 9112
+              },
+              {
+                "name": "cast_def_0_1004.jpeg",
+                "type": "Image",
+                "size": 10583
+              },
+              {
+                "name": "cast_def_0_1007.jpeg",
+                "type": "Image",
+                "size": 10178
+              },
+              {
+                "name": "...and 3753 more",
+                "type": "Placeholder",
+                "size": null
+              }
+            ]
+          },
+          {
+            "name": "ok_front",
+            "type": "Folder",
+            "count": 2875,
+            "size": 27832644,
+            "children": [
+              {
+                "name": "cast_ok_0_1.jpeg",
+                "type": "Image",
+                "size": 10307
+              },
+              {
+                "name": "cast_ok_0_1001.jpeg",
+                "type": "Image",
+                "size": 9137
+              },
+              {
+                "name": "cast_ok_0_1002.jpeg",
+                "type": "Image",
+                "size": 9869
+              },
+              {
+                "name": "cast_ok_0_1003.jpeg",
+                "type": "Image",
+                "size": 10546
+              },
+              {
+                "name": "cast_ok_0_1005.jpeg",
+                "type": "Image",
+                "size": 9110
+              },
+              {
+                "name": "...and 2870 more",
+                "type": "Placeholder",
+                "size": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

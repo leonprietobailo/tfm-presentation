@@ -18,6 +18,7 @@ export class NavHeaderComponent {
   items: MenuItem[] = [
     // { label: 'Home', routerLink: '/home' },
     { label: 'Introduction', routerLink: '/introduction' },
+    { label: 'Dataset', routerLink: '/dataset' },
     { label: 'YOLO Classification', routerLink: '/yolo_cls' },
     { label: 'YOLO Segmentation', routerLink: '/yolo_seg' },
     { label: 'Keras Classification', routerLink: '/keras_cls' },

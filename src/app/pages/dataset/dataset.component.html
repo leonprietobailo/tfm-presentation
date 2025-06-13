@@ -1,0 +1,78 @@
+<app-slideshow-section>
+    <ng-template>
+        <div class="slide-content">
+            <div class="split-slide">
+                <div class="text-column">
+                    <h1>Structure</h1>
+                    <p>
+                        The use case selected for this thesis involves the identification of manufacturing defects in
+                        impellers of submersible pumps. The dataset consists of 7,348 grayscale images with a resolution
+                        of 300 × 300 pixels. These images are categorized into two classes:
+                    </p>
+                    <ul class="class-list">
+                        <li><span class="class-label ok">OK:</span> Represents impellers that do not exhibit any
+                            manufacturing defects.</li>
+                        <li><span class="class-label def">DEF:</span> Denotes impellers that show defects resulting from
+                            various manufacturing errors.</li>
+                    </ul>
+                    <p>
+                        The primary objective of this thesis is to analyze different strategies and solutions for
+                        developing computer vision models capable of reliably distinguishing between these two classes.
+                    </p>
+                </div>
+                <div class="image-column">
+                    <img src="assets/images/intro_industry40.png" alt="Model Diagram" />
+                </div>
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template>
+        <div class="slide-content">
+            <div class="split-slide">
+                <div class="text-column">
+                    <h1>Data Cleaning and Verification</h1>
+                    <p>
+                        Before working with the aforementioned dataset, it is essential to perform thorough validation
+                        and preprocessing. The primary objectives are to ensure the integrity of the dataset, to prevent
+                        any data leakage between the training and testing subsets (“train” and “test”), and to apply
+                        transformations to the file metadata that may facilitate tasks such as reconstructing the
+                        original directory structure.
+                    </p>
+                    <p>
+                        In this context, the following operations are carried out:
+                    </p>
+                    <ul>
+                        <li><strong>Duplicate Element Analysis:</strong> Potential data contamination between the
+                            training and testing sets is investigated to ensure that evaluations are conducted on data
+                            previously unseen by the model.</li>
+                        <li><strong>Grayscale Analysis:</strong> The dataset’s author states that the images are in
+                            grayscale, meaning each image contains only one channel instead of the standard three (RGB).
+                            Incorrect assumptions regarding this property may result in information loss or other
+                            inconsistencies during processing.</li>
+                        <li><strong>Unique Identifier Generation:</strong> The use of external dataset managers, such as
+                            Roboflow, may alter the original directory structure. Therefore, the initial structure is
+                            recorded in the file metadata to enable its later recovery or verification.</li>
+                    </ul>
+                </div>
+                <div class="image-column">
+                    <!-- <img src="assets/images/intro_blade_defect.png" alt="Model Diagram" /> -->
+                     <app-tree-table></app-tree-table>
+                </div>
+            </div>
+            <div class="next-btn-div">
+                <button class="next-btn" (click)="goNext()">
+                    YOLO Segmentation <span class="arrow">→</span>
+                </button>
+            </div>
+        </div>
+    </ng-template>
+
+
+    <!-- <ng-template>
+    <div class="slide-content">
+      <h2>Canvas Slide</h2>
+      <canvas width="600" height="400"></canvas>
+    </div>
+  </ng-template> -->
+</app-slideshow-section>

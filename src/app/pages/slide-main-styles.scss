@@ -51,11 +51,27 @@
         max-width: 90%;
       }
 
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
       li {
         font-size: 1.125rem;
         line-height: 1.6;
+        position: relative;
+        padding-left: 1.8em;
         color: c.$cv-text;
         max-width: 90%;
+
+      }
+
+      li::before {
+        content: "•";
+        //   color: #4F46E5;
+        font-weight: bold;
+        position: absolute;
+        left: 0.8em;
       }
     }
 

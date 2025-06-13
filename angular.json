@@ -26,17 +26,23 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-                "src/assets",
+              "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
-              "src/styles/styles.scss",
+              "node_modules/prismjs/themes/prism.css",
+              "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css",
+              "src/styles.scss",
               "src/styles/colors.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-python.min.js",
+              "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -87,17 +93,23 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-                "src/assets",
+              "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
-              "src/styles/styles.scss",
+              "node_modules/prismjs/themes/prism.css",
+              "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css",
+              "src/styles.scss",
               "src/styles/colors.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-python.min.js",
+              "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.min.js"
+            ]
           }
         }
       }
