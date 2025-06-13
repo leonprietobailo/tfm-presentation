@@ -1,9 +1,9 @@
 <div class="card">
-    <p-treetable [value]="files" [columns]="cols" [resizableColumns]="true" [scrollable]="true" scrollHeight="400px">
+    <p-treetable [value]="files" [columns]="cols" [resizableColumns]="true" [scrollable]="true" scrollHeight="400px" columnResizeMode="expand">
         <ng-template #colgroup let-columns>
             <colgroup>
                 @for (col of columns; track col.field) {
-                <col />
+                <col [style.width]="col.width"/>
                 }
             </colgroup>
         </ng-template>
