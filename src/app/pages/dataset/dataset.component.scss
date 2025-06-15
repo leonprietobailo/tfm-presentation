@@ -11,14 +11,6 @@
     color: #DC2626;
 }
 
-.grid-wrapper {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // padding: 40px;
-}
-
 .image-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { SlideshowSectionComponent } from "../../components/slideshow-section/slideshow-section.component";
+
 
 @Component({
   selector: 'app-keras-cls',

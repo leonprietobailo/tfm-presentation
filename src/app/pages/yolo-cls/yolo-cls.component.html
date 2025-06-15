@@ -1,1 +1,93 @@
-<p>yolo-cls works!</p>
+<app-slideshow-section>
+    <!-- <ng-template>
+        <div class="slide-content">
+            <div class="split-slide">
+                <div class="text-column">
+                    <h1>YOLO Framework</h1>
+                    <p>
+                        The YOLO (You Only Look Once) framework, developed and maintained by Ultralytics, is among the
+                        most powerful and widely adopted tools in modern computer vision. Initially introduced as a
+                        novel approach to object detection that formulates the task as a single-stage regression
+                        problem, YOLO has evolved through several versions—culminating in YOLOv11—with significant
+                        improvements in accuracy, speed, and usability. </p>
+
+                    <p>
+                        Its primary strength lies in the high inference speed of its models, which makes it suitable for
+                        real-time applications such as autonomous driving, security surveillance, and industrial
+                        inspection. YOLO provides a diverse suite of pre-trained models tailored for various computer
+                        vision tasks, including object detection, classification, and segmentation.
+                    </p>
+                    <p>
+                        Furthermore, the framework greatly simplifies the training process by abstracting away complex
+                        aspects such as class imbalance, data augmentation, and model optimization. This user-centric
+                        design makes it highly accessible for both researchers and practitioners.
+                    </p>
+                </div>
+                <div class="grid-wrapper">
+                    <div class="image-grid">
+                        <img src="assets/images/yolo/banner_detect.png" alt="Detection Banner" />
+                        <img src="assets/images/yolo/banner_segment.png" alt="Segmentation Banner" />
+                        <img src="assets/images/yolo/banner_classify.png" alt="Classification Banner" />
+                        <img src="assets/images/yolo/banner_pose.png" alt="Pose Banner" />
+                        <img src="assets/images/yolo/banner_obb.png" alt="Oriented Bounding Box Banner" />
+                        <img src="assets/images/yolo/banner_track.png" alt="Track Banner" />
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template> -->
+
+    <ng-template>
+        <div class="slide-content">
+            <div class="split-slide">
+                <div class="text-column" >
+                        <h1>YOLOv8 Classification Results</h1>
+                        <p>
+                            The first model trained in this study is the YOLOv8 Classification model. This process involves fine-tuning a pretrained classification model from the YOLO framework to develop a functional system capable of accurately classifying the condition of the components. The model is trained for a total of 100 epochs.
+                        </p>
+                        <div class="image-wrapper">
+                            <img src="assets/snippets/yolo_train.svg" alt="YOLOv8 Classification Model Train Function">
+                        </div>
+                </div>
+                <div class="result-column">
+                    <p-chart
+  #myChart
+  type="line"
+  [data]="chartData"
+  [options]="chartOptions">
+</p-chart>
+                 <p-table [value]="users" responsiveLayout="scroll">
+                        <ng-template pTemplate="header">
+                          <tr>
+                            <th pSortableColumn="id">ID <p-sortIcon field="id"></p-sortIcon></th>
+                            <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+                            <th pSortableColumn="email">Email <p-sortIcon field="email"></p-sortIcon></th>
+                            <th pSortableColumn="age">Age <p-sortIcon field="age"></p-sortIcon></th>
+                          </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-user>
+                          <tr>
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.age }}</td>
+                          </tr>
+                        </ng-template>
+                      </p-table> 
+                </div>
+                <!-- <div class="image-column">
+                    <img src="assets/images/intro_blade_defect.png" alt="Model Diagram" />
+                </div> -->
+            </div>
+        </div>
+    </ng-template>
+
+
+    <!-- <ng-template>
+    <div class="slide-content">
+      <h2>Canvas Slide</h2>
+      <canvas width="600" height="400"></canvas>
+    </div>
+  </ng-template> -->
+</app-slideshow-section>
