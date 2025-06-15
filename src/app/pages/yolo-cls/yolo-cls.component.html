@@ -1,5 +1,5 @@
 <app-slideshow-section>
-    <!-- <ng-template>
+  <!-- <ng-template>
         <div class="slide-content">
             <div class="split-slide">
                 <div class="text-column">
@@ -31,60 +31,61 @@
                         <img src="assets/images/yolo/banner_pose.png" alt="Pose Banner" />
                         <img src="assets/images/yolo/banner_obb.png" alt="Oriented Bounding Box Banner" />
                         <img src="assets/images/yolo/banner_track.png" alt="Track Banner" />
-                       
+
                     </div>
                 </div>
             </div>
         </div>
     </ng-template> -->
 
-    <ng-template>
-        <div class="slide-content">
-            <div class="split-slide">
-                <div class="text-column" >
-                        <h1>YOLOv8 Classification Results</h1>
-                        <p>
-                            The first model trained in this study is the YOLOv8 Classification model. This process involves fine-tuning a pretrained classification model from the YOLO framework to develop a functional system capable of accurately classifying the condition of the components. The model is trained for a total of 100 epochs.
-                        </p>
-                        <div class="image-wrapper">
-                            <img src="assets/snippets/yolo_train.svg" alt="YOLOv8 Classification Model Train Function">
-                        </div>
-                </div>
-                <div class="result-column">
-                    <p-chart
-  #myChart
-  type="line"
-  [data]="chartData"
-  [options]="chartOptions">
-</p-chart>
-                 <p-table [value]="users" responsiveLayout="scroll">
-                        <ng-template pTemplate="header">
-                          <tr>
-                            <th pSortableColumn="id">ID <p-sortIcon field="id"></p-sortIcon></th>
-                            <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
-                            <th pSortableColumn="email">Email <p-sortIcon field="email"></p-sortIcon></th>
-                            <th pSortableColumn="age">Age <p-sortIcon field="age"></p-sortIcon></th>
-                          </tr>
-                        </ng-template>
-                        <ng-template pTemplate="body" let-user>
-                          <tr>
-                            <td>{{ user.id }}</td>
-                            <td>{{ user.name }}</td>
-                            <td>{{ user.email }}</td>
-                            <td>{{ user.age }}</td>
-                          </tr>
-                        </ng-template>
-                      </p-table> 
-                </div>
-                <!-- <div class="image-column">
+  <ng-template>
+    <div class="slide-content">
+      <div class="split-slide">
+        <div class="text-column">
+          <h1>YOLOv8 Classification Results</h1>
+          <p>
+            The first model trained in this study is the YOLOv8 Classification model. This process involves fine-tuning
+            a pretrained classification model from the YOLO framework to develop a functional system capable of
+            accurately classifying the condition of the components. The model is trained for a total of 100 epochs.
+          </p>
+          <div class="image-wrapper">
+            <img src="assets/snippets/yolo_train.svg" alt="YOLOv8 Classification Model Train Function">
+          </div>
+        </div>
+        <div class="result-column">
+          <div class="chart-wrapper">
+            <p-chart #myChart type="line" [data]="chartData" [options]="chartOptions"></p-chart>
+          </div>
+          <div class="table-wrapper">
+            <p-table [value]="users" responsiveLayout="scroll">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th pSortableColumn="id">ID</th>
+                  <th pSortableColumn="name">Name</th>
+                  <th pSortableColumn="email">Email</th>
+                  <th pSortableColumn="age">Age</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-user>
+                <tr>
+                  <td>{{ user.id }}</td>
+                  <td>{{ user.name }}</td>
+                  <td>{{ user.email }}</td>
+                  <td>{{ user.age }}</td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+        </div>
+        <!-- <div class="image-column">
                     <img src="assets/images/intro_blade_defect.png" alt="Model Diagram" />
                 </div> -->
-            </div>
-        </div>
-    </ng-template>
+      </div>
+    </div>
+  </ng-template>
 
 
-    <!-- <ng-template>
+  <!-- <ng-template>
     <div class="slide-content">
       <h2>Canvas Slide</h2>
       <canvas width="600" height="400"></canvas>

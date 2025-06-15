@@ -10,20 +10,25 @@ import { SlideshowSectionComponent } from '../../components/slideshow-section/sl
 
 import { Chart, registerables } from 'chart.js';
 import zoomPlugin from 'chartjs-plugin-zoom';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ChartData } from '../../models/chart-data-model';
+
 
 Chart.register(...registerables, zoomPlugin);
 
 @Component({
   selector: 'app-yolo-cls',
   standalone: true,
-  imports: [SlideshowSectionComponent, ChartModule, TableModule],
+  imports: [SlideshowSectionComponent, ChartModule, TableModule, HttpClientModule],
   templateUrl: './yolo-cls.component.html',
   styleUrls: ['../slide-main-styles.scss', './yolo-cls.component.scss']
 })
 export class YoloClsComponent implements AfterViewInit {
+
+  constructor(private http: HttpClient) { }
+
   @ViewChild('myChart', { read: ElementRef }) chartRef!: ElementRef;
 
-  chartData: any;
   chartOptions: any;
 
   users = [
@@ -34,33 +39,15 @@ export class YoloClsComponent implements AfterViewInit {
     { id: 5, name: 'Ethan Hunt', email: 'ethan@example.com', age: 39 }
   ];
 
-  ngOnInit() {
-    this.chartData = {
-      datasets: [
-        {
-          label: 'Signal',
-          data: [
-            { x: 0, y: 0 },
-            { x: 1, y: 1 },
-            { x: 2, y: 4 },
-            { x: 3, y: 9 },
-            { x: 4, y: 16 },
-            { x: 5, y: 25 },
-          ],
-          fill: false,
-          borderColor: '#42A5F5',
-          tension: 0.3,
-          showLine: true
-        }
-      ]
-    };
+  chartData!: ChartData;
 
+  ngOnInit() {
     this.chartOptions = {
       responsive: true,
       plugins: {
         title: {
           display: true,
-          text: 'Zoomable Chart with Double-Click Reset'
+          text: 'Training and Validation Losses vs Training Epochs',
         },
         zoom: {
           zoom: {
@@ -77,18 +64,22 @@ export class YoloClsComponent implements AfterViewInit {
           position: 'bottom',
           title: {
             display: true,
-            text: 'X Axis'
+            text: 'Epochs'
           }
         },
         y: {
           beginAtZero: true,
           title: {
             display: true,
-            text: 'Y Axis'
+            text: 'Loss'
           }
         }
       }
     };
+
+    this.http.get<ChartData>('assets/data/yolo-cls-results.json').subscribe(data => {
+      this.chartData = data;
+    });
   }
 
   ngAfterViewInit() {

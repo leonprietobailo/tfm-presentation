@@ -129,13 +129,23 @@
       align-items: center;
       gap: 48px;
 
-      p-chart{
-        width : 80%;
+
+
+      .chart-wrapper {
+        width: 90%;
+        border-radius: 18px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        //  overflow-x: auto;
+         box-sizing: border-box;
+         padding: 10px;
+         background-color: #fff;
       }
 
-      p-table {
-        width: 80%;
-        border-radius: 1rem;
+      .table-wrapper{
+        width: 90%;
+        border-radius: 18px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+         overflow-x: auto;
       }
     }
   }
