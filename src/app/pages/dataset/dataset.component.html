@@ -6,7 +6,7 @@
                     <h1>Structure</h1>
                     <p>
                         The use case selected for this thesis involves the identification of manufacturing defects in
-                        impellers of submersible pumps. The dataset consists of 7,348 grayscale images with a resolution
+                        impellers of submersible pumps. The dataset consists of 7,354 grayscale images with a resolution
                         of 300 × 300 pixels. These images are categorized into two classes:
                     </p>
                     <ul class="class-list">
@@ -55,14 +55,18 @@
                             recorded in the file metadata to enable its later recovery or verification.</li>
                     </ul>
                 </div>
-                <div class="image-column">
-                    <!-- <img src="assets/images/intro_blade_defect.png" alt="Model Diagram" /> -->
-                     <app-tree-table></app-tree-table>
+                <div class="grid-wrapper">
+                    <div class="image-grid">
+                        <img src="assets/images/dataset_cast_ok_0_10.jpeg" alt="OK Impeller" />
+                        <img src="assets/images/dataset_cast_def_0_7.jpeg" alt="Defective Impeller" />
+                        <img src="assets/images/dataset_cast_def_0_40.jpeg" alt="Defective Impeller" />
+                        <img src="assets/images/dataset_cast_def_0_242.jpeg" alt="Defective Impeller" />
+                    </div>
                 </div>
             </div>
             <div class="next-btn-div">
                 <button class="next-btn" (click)="goNext()">
-                    YOLO Segmentation <span class="arrow">→</span>
+                    YOLOv8 Classification <span class="arrow">→</span>
                 </button>
             </div>
         </div>
