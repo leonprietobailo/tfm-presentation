@@ -19,11 +19,8 @@ export class NavHeaderComponent {
     // { label: 'Home', routerLink: '/home' },
     { label: 'Introduction', routerLink: '/introduction' },
     { label: 'Dataset', routerLink: '/dataset' },
-    { label: 'YOLO Classification', routerLink: '/yolo_cls' },
-    { label: 'YOLO Segmentation', routerLink: '/yolo_seg' },
-    { label: 'Keras Classification', routerLink: '/keras_cls' },
-    { label: 'Keras Classification + Crop', routerLink: '/keras_crop' },
-    { label: 'Keras Classification + Backbone', routerLink: '/keras_backbone' },
+    { label: 'YOLO Framework', routerLink: '/yolo' },
+    { label: 'Keras Framework', routerLink: '/keras' },
     { label: 'GradCAM', routerLink: '/gradcam' },
     { label: 'Conclusion', routerLink: '/conclusion' }
   ];

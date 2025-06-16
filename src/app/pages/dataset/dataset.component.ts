@@ -15,7 +15,7 @@ export class DatasetComponent {
   constructor(private router: Router) { }
 
   goNext() {
-    this.router.navigate(['yolo_cls']);
+    this.router.navigate(['yolo']);
   }
 }
 

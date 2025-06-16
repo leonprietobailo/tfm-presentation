@@ -14,11 +14,8 @@ export const routes: Routes = [
   { path: '', component: HomeComponent, data: {animation: 'home'}},
   { path: 'introduction', component: IntroductionComponent, data: {animation: 'introduction'} },
   { path: 'dataset', component: DatasetComponent, data: {animation: 'dataset'} },
-  { path: 'yolo_cls', component: YoloClsComponent, data: {animation: 'yolo_cls'} },
-  { path: 'yolo_seg', component: YoloSegComponent, data: {animation: 'yolo_seg'} },
-  { path: 'keras_cls', component: KerasClsComponent, data: {animation: 'keras_cls'} },
-  { path: 'keras_crop', component: KerasCropComponent , data: {animation: 'keras_crop'}},
-  { path: 'keras_backbone', component: KerasBackboneComponent, data: {animation: 'keras_backbone'}},
+  { path: 'yolo', component: YoloClsComponent, data: {animation: 'yolo'} },
+  { path: 'keras', component: KerasClsComponent, data: {animation: 'keras'} },
   { path: 'gradcam', component: GradcamComponent, data: {animation: 'gradcam'}},
   { path: 'conclusion', component: ConclusionComponent, data: {animation: 'conclusion'} }
 ];

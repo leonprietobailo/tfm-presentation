@@ -1,5 +1,5 @@
 <app-slideshow-section>
-  <!-- <ng-template>
+    <ng-template>
         <div class="slide-content">
             <div class="split-slide">
                 <div class="text-column">
@@ -89,12 +89,9 @@
             </p-table>
           </div>
         </div>
-        <div class="image-column">
-                    <img src="assets/images/intro_blade_defect.png" alt="Model Diagram" />
-                </div>
       </div>
     </div>
-  </ng-template>  -->
+  </ng-template> 
 
 
 
@@ -123,8 +120,119 @@
         </div>
       </div>
     </div>
-  </ng-template>
+  </ng-template> 
 
+   <ng-template>
+    <div class="slide-content">
+      <div class="split-slide">
+        <div class="text-column">
+          <h1>YOLOv8 Segmentation Results</h1>
+          <h2>First Segmenter</h2>
+          <p>
+            The initial segmentation model, developed using a supervised learning paradigm and trained on a relatively
+            small dataset comprising only 100 annotated images, has already yielded good results. Despite the limited
+            amount of training data, the model demonstrates a notable ability to accurately delineate target regions.
+          </p>
+          <div class="grid-wrapper">
+            <div class="image-grid_3">
+              <img src="assets/images/segmentation/seg_val_true.png" alt="YOLOv8 Classification Model Train Function">
+              <img src="assets/images/segmentation/seg_val_pred.png" alt="YOLOv8 Classification Model Train Function">
+            </div>
+          </div>
+        </div>
+
+        <div class="result-column">
+          <div class="chart-wrapper">
+            <p-chart #myChart type="line" [data]="chartDataSeg1" [options]="chartOptionsSeg1"></p-chart>
+          </div>
+          <div class="table-wrapper">
+            <p-table [value]="seg1" responsiveLayout="scroll">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th>mIoU</th>
+                  <th>Dice</th>
+                  <th>Inference Time [ms]</th>
+                </tr>
+
+              </ng-template>
+              <ng-template pTemplate="body" let-seg1>
+                <tr>
+                  <td>{{ seg1.miou }}</td>
+                  <td>{{ seg1.dice }}</td>
+                  <td>{{ seg1.inference_time }}</td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template> 
+
+
+  <ng-template>
+    <div class="slide-content">
+      <div class="split-slide">
+        <div class="text-column">
+          <h1>YOLOv8 Segmentation Results</h1>
+          <h2>Second Segmenter</h2>
+          <p>
+            The second segmentation model, trained on a pseudo-labeled dataset within a semi-supervised learning framework, demonstrates a slight improvement over the baseline model trained under a purely supervised paradigm. This approach enhances the model’s generalization capabilities, leading to more accurate and robust segmentation performance compared to the initial supervised counterpart.
+          </p>
+          <div class="grid-wrapper">
+            <div class="image-grid_4">
+            <img src="assets/images/segmentation/mosaic/seg_augmentation-0-0.png" alt="Segmentation Augmentation Mosaic">
+            <img src="assets/images/segmentation/mosaic/seg_augmentation-0-1.png" alt="Segmentation Augmentation Mosaic">
+            <img src="assets/images/segmentation/mosaic/seg_augmentation-0-2.png" alt="Segmentation Augmentation Mosaic">
+            <img src="assets/images/segmentation/mosaic/seg_augmentation-0-3.png" alt="Segmentation Augmentation Mosaic">
+            <img src="assets/images/segmentation/mosaic/seg_augmentation-1-0.png" alt="Segmentation Augmentation Mosaic">
+            <img src="assets/images/segmentation/mosaic/seg_augmentation-1-1.png" alt="Segmentation Augmentation Mosaic">
+            <img src="assets/images/segmentation/mosaic/seg_augmentation-1-2.png" alt="Segmentation Augmentation Mosaic">
+            <img src="assets/images/segmentation/mosaic/seg_augmentation-1-3.png" alt="Segmentation Augmentation Mosaic">
+            <img src="assets/images/segmentation/mosaic/seg_augmentation-2-0.png" alt="Segmentation Augmentation Mosaic">
+             <img src="assets/images/segmentation/mosaic/seg_augmentation-2-1.png" alt="Segmentation Augmentation Mosaic">
+           <!-- <img src="assets/images/segmentation/mosaic/seg_augmentation-2-2.png" alt="Segmentation Augmentation Mosaic">
+            <img src="assets/images/segmentation/mosaic/seg_augmentation-2-3.png" alt="Segmentation Augmentation Mosaic">
+            <img src="assets/images/segmentation/mosaic/seg_augmentation-3-0.png" alt="Segmentation Augmentation Mosaic">
+            <img src="assets/images/segmentation/mosaic/seg_augmentation-3-1.png" alt="Segmentation Augmentation Mosaic">
+            <img src="assets/images/segmentation/mosaic/seg_augmentation-3-2.png" alt="Segmentation Augmentation Mosaic"> -->
+            <!-- <img src="assets/images/segmentation/mosaic/seg_augmentation-3-3.png" alt="Segmentation Augmentation Mosaic"> -->
+          </div>
+        </div>
+        </div>
+
+        <div class="result-column">
+          <div class="chart-wrapper">
+            <p-chart #myChart type="line" [data]="chartDataSeg1" [options]="chartOptionsSeg1"></p-chart>
+          </div>
+          <div class="table-wrapper">
+            <p-table [value]="seg1" responsiveLayout="scroll">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th>mIoU</th>
+                  <th>Dice</th>
+                  <th>Inference Time [ms]</th>
+                </tr>
+
+              </ng-template>
+              <ng-template pTemplate="body" let-seg1>
+                <tr>
+                  <td>{{ seg1.miou }}</td>
+                  <td>{{ seg1.dice }}</td>
+                  <td>{{ seg1.inference_time }}</td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+        </div>
+      </div>
+      <div class="next-btn-div">
+        <button class="next-btn" (click)="goNext()">
+            Keras Framework <span class="arrow">→</span>
+        </button>
+    </div>
+    </div>
+  </ng-template>
 
 
   <!-- <ng-template>
