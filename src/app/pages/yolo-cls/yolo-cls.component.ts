@@ -32,12 +32,16 @@ export class YoloClsComponent implements AfterViewInit {
   chartOptions: any;
 
   users = [
-    { id: 1, name: 'Alice Johnson', email: 'alice@example.com', age: 28 },
-    { id: 2, name: 'Bob Smith', email: 'bob@example.com', age: 34 },
-    { id: 3, name: 'Charlie Brown', email: 'charlie@example.com', age: 22 },
-    { id: 4, name: 'Diana Prince', email: 'diana@example.com', age: 31 },
-    { id: 5, name: 'Ethan Hunt', email: 'ethan@example.com', age: 39 }
+    { class: 'Defective', precision: 0.9978, recall: 1.0000, f1: 0.9989, support: 453 },
+    { class: 'Ok', precision: 1.0000, recall: 0.9962, f1: 0.9981, support:262 }
   ];
+
+
+  // <td>{{ user.class }}</td>
+  // <td>{{ user.precision }}</td>
+  // <td>{{ user.recall }}</td>
+  // <td>{{ user.f1 }}</td>
+  // <td>{{ user.support }}</td>
 
   chartData!: ChartData;
 

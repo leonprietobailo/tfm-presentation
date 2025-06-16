@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-    </ng-template> -->
+    </ng-template> 
 
   <ng-template>
     <div class="slide-content">
@@ -60,29 +60,71 @@
             <p-table [value]="users" responsiveLayout="scroll">
               <ng-template pTemplate="header">
                 <tr>
-                  <th pSortableColumn="id">ID</th>
-                  <th pSortableColumn="name">Name</th>
-                  <th pSortableColumn="email">Email</th>
-                  <th pSortableColumn="age">Age</th>
+                  <th>Class</th>
+                  <th>Precision</th>
+                  <th>Recall</th>
+                  <th>F1-score</th>
+                  <th>Support</th>
                 </tr>
+
               </ng-template>
               <ng-template pTemplate="body" let-user>
                 <tr>
-                  <td>{{ user.id }}</td>
-                  <td>{{ user.name }}</td>
-                  <td>{{ user.email }}</td>
-                  <td>{{ user.age }}</td>
+                  <td>{{ user.class }}</td>
+                  <td>{{ user.precision }}</td>
+                  <td>{{ user.recall }}</td>
+                  <td>{{ user.f1 }}</td>
+                  <td>{{ user.support }}</td>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="footer">
+                <tr>
+                  <td colspan="5">
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                      <strong sty>Accuracy: 99.86%</strong>
+                    </div>
+                  </td>
                 </tr>
               </ng-template>
             </p-table>
           </div>
         </div>
-        <!-- <div class="image-column">
+        <div class="image-column">
                     <img src="assets/images/intro_blade_defect.png" alt="Model Diagram" />
-                </div> -->
+                </div>
+      </div>
+    </div>
+  </ng-template>  -->
+
+
+
+  <ng-template>
+    <div class="slide-content">
+      <div class="split-slide">
+        <div class="text-column">
+          <h1>Semi-supervised Learning</h1>
+          <p>
+            The semi-supervised paradigm combines a small amount of labeled data with a large amount of unlabeled data
+            to improve learning performance. It leverages the structure in unlabeled data to guide the model, making it
+            especially useful when labeled data is scarce or costly. This approach balances the strengths of supervised
+            and unsupervised learning.
+          </p>
+          <p>
+            The semi-supervised paradigm is used to train segmentation models capable of distinguishing between the
+            interior and the background of the part. The Roboflow tool is employed to label the regions of the image
+            corresponding to the part. </p>
+        </div>
+        <div class="grid-wrapper">
+          <div class="image-grid_2">
+            <img src="assets/images/semisupervised/semisupervised_flow1.svg" alt="Semi Supervised Flow" />
+            <img src="assets/images/semisupervised/semisupervised_flow2.svg" alt="Semi Supervised Flow" />
+            <img src="assets/images/semisupervised/semisupervised_flow3.svg" alt="Semi Supervised Flow" />
+          </div>
+        </div>
       </div>
     </div>
   </ng-template>
+
 
 
   <!-- <ng-template>
