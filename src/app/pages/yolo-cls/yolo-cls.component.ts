@@ -4,7 +4,7 @@ import {
   ElementRef,
   AfterViewInit
 } from '@angular/core';
-import { ChartModule } from 'primeng/chart';
+import { UIChart as PrimeNGChart , ChartModule} from 'primeng/chart';
 import { TableModule } from 'primeng/table';
 import { SlideshowSectionComponent } from '../../components/slideshow-section/slideshow-section.component';
 
@@ -25,6 +25,30 @@ Chart.register(...registerables, zoomPlugin);
   styleUrls: ['../slide-main-styles.scss', './yolo-cls.component.scss']
 })
 export class YoloClsComponent implements AfterViewInit {
+  @ViewChild('clsChart') clsChart!: PrimeNGChart;
+  @ViewChild('segChart1') segChart1!: PrimeNGChart;
+  @ViewChild('segChart2') segChart2!: PrimeNGChart;
+
+  resetZoomCls() {
+    const chartJsInstance = this.clsChart?.chart;
+    if (chartJsInstance) {
+      chartJsInstance.resetZoom();
+    }
+  }
+
+  resetZoomSeg1() {
+    const chartJsInstance = this.segChart1?.chart;
+    if (chartJsInstance) {
+      chartJsInstance.resetZoom();
+    }
+  }
+
+  resetZoomSeg2() {
+    const chartJsInstance = this.segChart2?.chart;
+    if (chartJsInstance) {
+      chartJsInstance.resetZoom();
+    }
+  }
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -127,21 +151,21 @@ export class YoloClsComponent implements AfterViewInit {
 
   }
 
-  ngAfterViewInit() {
-    const tryAttach = (attemptsLeft = 10) => {
-      const canvas = this.chartRef?.nativeElement?.querySelector('canvas') as HTMLCanvasElement | null;
-      if (canvas) {
-        canvas.addEventListener('dblclick', () => {
-          const chart = Chart.getChart(canvas);
-          chart?.resetZoom();
-        });
-      } else if (attemptsLeft > 0) {
-        setTimeout(() => tryAttach(attemptsLeft - 1), 100);
-      } else {
-        console.warn('Canvas not found after multiple attempts.');
-      }
-    };
-    tryAttach();
+   ngAfterViewInit() {
+  //   const tryAttach = (attemptsLeft = 10) => {
+  //     const canvas = this.chartRef?.nativeElement?.querySelector('canvas') as HTMLCanvasElement | null;
+  //     if (canvas) {
+  //       canvas.addEventListener('dblclick', () => {
+  //         const chart = Chart.getChart(canvas);
+  //         chart?.resetZoom();
+  //       });
+  //     } else if (attemptsLeft > 0) {
+  //       setTimeout(() => tryAttach(attemptsLeft - 1), 100);
+  //     } else {
+  //       console.warn('Canvas not found after multiple attempts.');
+  //     }
+  //   };
+  //   tryAttach();
   }
 
   goNext() {
