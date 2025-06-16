@@ -1,5 +1,5 @@
 <app-slideshow-section>
-  <!-- <ng-template>
+  <ng-template>
         <div class="slide-content">
             <div class="split-slide">
                 <div class="text-column">
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-    </ng-template>  -->
+    </ng-template> 
 
   <ng-template>
     <div class="slide-content">
@@ -83,7 +83,8 @@
                 <tr>
                   <td colspan="5">
                     <div style="display: flex; justify-content: center; align-items: center;">
-                      <strong sty>Accuracy: 99.86%</strong>
+                      <p style="margin: auto;"><strong sty>Accuracy: 99.86%</strong></p>
+                      <p style="margin: auto;"><strong sty>Inference Time: 3.98 ms</strong></p>
                     </div>
                   </td>
                 </tr>
@@ -146,7 +147,7 @@
         <div class="result-column">
           <div class="chart-wrapper">
             <div class="zoom-reset-wrapper"> <button (click)="resetZoomSeg1()">Reset zoom</button></div>
-            <p-chart #segChart1 type="line" [data]="chartDataSeg1" [options]="chartOptionsSeg1"></p-chart>
+            <p-chart #segChart1 type="line" [data]="chartDataSeg1" [options]="chartOptionsSeg"></p-chart>
           </div>
           <div class="table-wrapper">
             <p-table [value]="seg1" responsiveLayout="scroll">
@@ -220,10 +221,10 @@
         <div class="result-column">
           <div class="chart-wrapper">
             <div class="zoom-reset-wrapper"> <button (click)="resetZoomSeg2()">Reset zoom</button></div>
-            <p-chart #segChart2 type="line" [data]="chartDataSeg1" [options]="chartOptionsSeg1"></p-chart>
+            <p-chart #segChart2 type="line" [data]="chartDataSeg2" [options]="chartOptionsSeg"></p-chart>
           </div>
           <div class="table-wrapper">
-            <p-table [value]="seg1" responsiveLayout="scroll">
+            <p-table [value]="seg2" responsiveLayout="scroll">
               <ng-template pTemplate="header">
                 <tr>
                   <th>mIoU</th>
@@ -232,11 +233,11 @@
                 </tr>
 
               </ng-template>
-              <ng-template pTemplate="body" let-seg1>
+              <ng-template pTemplate="body" let-seg2>
                 <tr>
-                  <td>{{ seg1.miou }}</td>
-                  <td>{{ seg1.dice }}</td>
-                  <td>{{ seg1.inference_time }}</td>
+                  <td>{{ seg2.miou }}</td>
+                  <td>{{ seg2.dice }}</td>
+                  <td>{{ seg2.inference_time }}</td>
                 </tr>
               </ng-template>
             </p-table>
@@ -251,11 +252,4 @@
     </div>
   </ng-template>
 
-
-  <!-- <ng-template>
-    <div class="slide-content">
-      <h2>Canvas Slide</h2>
-      <canvas width="600" height="400"></canvas>
-    </div>
-  </ng-template> -->
 </app-slideshow-section>

@@ -30,7 +30,6 @@ export class TreeTableComponent {
     return data.map(item => ({
       data: {
         name: item.name,
-        expand: true,
         count: item.count,
         size: item.size
           ? item.size >= 1024 * 1024
@@ -38,6 +37,7 @@ export class TreeTableComponent {
             : `${Math.round(item.size / 1024)} KB`
           : '', type: item.type
       },
+      expanded: item.expanded,
       children: item.children ? this.mapToTreeNodes(item.children) : undefined
     }));
   }

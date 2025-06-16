@@ -4,7 +4,7 @@ import {
   ElementRef,
   AfterViewInit
 } from '@angular/core';
-import { UIChart as PrimeNGChart , ChartModule} from 'primeng/chart';
+import { UIChart as PrimeNGChart, ChartModule } from 'primeng/chart';
 import { TableModule } from 'primeng/table';
 import { SlideshowSectionComponent } from '../../components/slideshow-section/slideshow-section.component';
 
@@ -55,20 +55,24 @@ export class YoloClsComponent implements AfterViewInit {
   @ViewChild('myChart', { read: ElementRef }) chartRef!: ElementRef;
 
   chartOptions: any;
-  chartOptionsSeg1: any;
+  chartOptionsSeg: any;
 
   users = [
     { class: 'Defective', precision: 0.9978, recall: 1.0000, f1: 0.9989, support: 453 },
-    { class: 'Ok', precision: 1.0000, recall: 0.9962, f1: 0.9981, support:262 }
+    { class: 'Ok', precision: 1.0000, recall: 0.9962, f1: 0.9981, support: 262 }
   ];
 
   seg1 = [
     { miou: 0.9849, dice: 0.9924, inference_time: 9.3669 }
-    ];
+  ];
+
+  seg2 = [
+    { miou: 0.9889, dice: 0.9944, inference_time: 9.8838 }
+  ];
 
   chartData!: ChartData;
   chartDataSeg1!: ChartData;
-  // chartDataSeg2!: ChartData;
+  chartDataSeg2!: ChartData;
 
   ngOnInit() {
     this.chartOptions = {
@@ -76,7 +80,7 @@ export class YoloClsComponent implements AfterViewInit {
       plugins: {
         title: {
           display: true,
-          text: 'Training and Validation Losses vs Training Epochs',
+          text: 'Training and Validation Losses vs Epochs',
         },
         zoom: {
           zoom: {
@@ -106,12 +110,12 @@ export class YoloClsComponent implements AfterViewInit {
       }
     };
 
-    this.chartOptionsSeg1 = {
+    this.chartOptionsSeg = {
       responsive: true,
       plugins: {
         title: {
           display: true,
-          text: 'Training and Validation Segmentation Losses vs Training Epochs',
+          text: 'Training and Validation Segmentation Losses vs Epochs',
         },
         zoom: {
           zoom: {
@@ -149,23 +153,27 @@ export class YoloClsComponent implements AfterViewInit {
       this.chartDataSeg1 = data;
     });
 
+    this.http.get<ChartData>('assets/data/yolo-seg-2-results.json').subscribe(data => {
+      this.chartDataSeg2 = data;
+    });
+
   }
 
-   ngAfterViewInit() {
-  //   const tryAttach = (attemptsLeft = 10) => {
-  //     const canvas = this.chartRef?.nativeElement?.querySelector('canvas') as HTMLCanvasElement | null;
-  //     if (canvas) {
-  //       canvas.addEventListener('dblclick', () => {
-  //         const chart = Chart.getChart(canvas);
-  //         chart?.resetZoom();
-  //       });
-  //     } else if (attemptsLeft > 0) {
-  //       setTimeout(() => tryAttach(attemptsLeft - 1), 100);
-  //     } else {
-  //       console.warn('Canvas not found after multiple attempts.');
-  //     }
-  //   };
-  //   tryAttach();
+  ngAfterViewInit() {
+    //   const tryAttach = (attemptsLeft = 10) => {
+    //     const canvas = this.chartRef?.nativeElement?.querySelector('canvas') as HTMLCanvasElement | null;
+    //     if (canvas) {
+    //       canvas.addEventListener('dblclick', () => {
+    //         const chart = Chart.getChart(canvas);
+    //         chart?.resetZoom();
+    //       });
+    //     } else if (attemptsLeft > 0) {
+    //       setTimeout(() => tryAttach(attemptsLeft - 1), 100);
+    //     } else {
+    //       console.warn('Canvas not found after multiple attempts.');
+    //     }
+    //   };
+    //   tryAttach();
   }
 
   goNext() {
