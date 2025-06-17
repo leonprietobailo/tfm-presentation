@@ -1,6 +1,6 @@
 <app-slideshow-section>
 
-    <ng-template>
+    <!-- <ng-template>
         <div class="slide-content">
             <div class="split-slide">
                 <div class="text-column">
@@ -29,8 +29,115 @@
                 </div></div>
             </div>
         </div>
-    </ng-template>
+    </ng-template> -->
 
 
+    <!-- <ng-template>
+        <div class="slide-content">
+          <div class="split-slide">
+            <div class="text-column">
+              <h1>Keras Classification Results</h1>
+              <h2>Simple Keras Classificator</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum unde suscipit, maxime minima distinctio vel ex quia voluptate inventore consequuntur reiciendis dolore, aliquam ipsa aspernatur iste itaque neque sequi fuga?
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quis magni ratione praesentium dolorum vel quia odit quae cum, consequatur, pariatur voluptatem, numquam cumque. Reprehenderit deleniti in amet cumque tempora.
+              </p>
+              <div class="image-wrapper">
+                <img src="assets/snippets/keras_architecture_snippet.svg" alt="YOLOv8 Classification Model Train Function">
+              </div>
+            </div>
+            <div class="result-column">
+              <div class="chart-wrapper">
+                <div class="zoom-reset-wrapper"> <button (click)="resetZoomCls()">Reset zoom</button>
+                </div>
+                <p-chart #clsChart type="line" [data]="clsChartData" [options]="clsChartOptions"></p-chart>
+              </div>
+              <div class="table-wrapper">
+                <p-table [value]="users" responsiveLayout="scroll">
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th>Class</th>
+                      <th>Precision</th>
+                      <th>Recall</th>
+                      <th>F1-score</th>
+                      <th>Support</th>
+                    </tr>
+    
+                  </ng-template>
+                  <ng-template pTemplate="body" let-user>
+                    <tr>
+                      <td>{{ user.class }}</td>
+                      <td>{{ user.precision }}</td>
+                      <td>{{ user.recall }}</td>
+                      <td>{{ user.f1 }}</td>
+                      <td>{{ user.support }}</td>
+                    </tr>
+                  </ng-template>
+                  <ng-template pTemplate="footer">
+                    <tr>
+                      <td colspan="5">
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                          <p style="margin: auto;"><strong sty>Accuracy: 99.86%</strong></p>
+                          <p style="margin: auto;"><strong sty>Inference Time: 3.98 ms</strong></p>
+                        </div>
+                      </td>
+                    </tr>
+                  </ng-template>
+                </p-table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template> -->
+
+
+      <ng-template>
+        <div class="slide-content">
+          <div class="split-slide">
+            <div class="text-column">
+                <h1>Keras Classification Results</h1>
+                <h2>Crop + Keras Classificator</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel explicabo error deserunt deleniti! Eos fuga commodi, qui voluptatibus aspernatur, dolores pariatur natus eaque facilis assumenda accusantium, mollitia molestiae? Ullam, temporibus!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque voluptatum animi sit esse, laborum eveniet error eligendi nostrum accusantium, maxime et impedit iure fugit voluptates officiis tempore saepe adipisci. Blanditiis?
+              </p>
+              <div class="image-wrapper">
+                  <img src="assets/images/keras/disc_background_transition.gif" alt="YOLOv8 Classification Model Train Function">
+              </div>
+            </div>
+    
+            <div class="result-column">
+              <div class="chart-wrapper">
+                <div class="zoom-reset-wrapper"> <button (click)="resetZoomClsCrop()">Reset zoom</button></div>
+                <p-chart #clsCropChart type="line" [data]="clsCropChartData" [options]="clsChartOptions"></p-chart>
+              </div>
+              <div class="table-wrapper">
+                <p-table [value]="clsTableData" responsiveLayout="scroll">
+                  <ng-template pTemplate="header">
+                    <tr>
+                        <th>Class</th>
+                        <th>Precision</th>
+                        <th>Recall</th>
+                        <th>F1-score</th>
+                        <th>Support</th>
+                      </tr>
+    
+                  </ng-template>
+                  <ng-template pTemplate="body" let-clsTableData>
+                    <tr>
+                        <td>{{ clsTableData.class }}</td>
+                        <td>{{ clsTableData.precision }}</td>
+                        <td>{{ clsTableData.recall }}</td>
+                        <td>{{ clsTableData.f1 }}</td>
+                        <td>{{ clsTableData.support }}</td>
+                      </tr>
+                  </ng-template>
+                </p-table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
 
 </app-slideshow-section>

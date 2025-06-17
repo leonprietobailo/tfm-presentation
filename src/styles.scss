@@ -607,6 +607,11 @@ body {
 
 }
 
+.p-imagecompare .p-imagecompare-slider { 
+    --p-imagecompare-handle-focus-ring-color: #3730a3;
+    --p-imagecompare-handle-border-color: #f00;
+}
+
 .p-steps-item-label {
   font-size: 0.9rem;   /* adjust as needed, e.g., 0.9rem for smaller */
 }
