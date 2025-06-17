@@ -4,9 +4,9 @@ import { SlideshowSectionComponent } from "../../components/slideshow-section/sl
 
 @Component({
   selector: 'app-keras-cls',
-  imports: [],
+  imports: [SlideshowSectionComponent],
   templateUrl: './keras-cls.component.html',
-  styleUrl: '../slide-main-styles.scss'
+  styleUrls: ['../slide-main-styles.scss', './keras-cls.component.scss']
 })
 export class KerasClsComponent {
 
