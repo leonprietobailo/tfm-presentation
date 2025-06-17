@@ -1,6 +1,6 @@
 <app-slideshow-section>
 
-    <!-- <ng-template>
+     <ng-template>
         <div class="slide-content">
             <div class="split-slide">
                 <div class="text-column">
@@ -29,10 +29,10 @@
                 </div></div>
             </div>
         </div>
-    </ng-template> -->
+    </ng-template>
 
 
-    <!-- <ng-template>
+    <ng-template>
         <div class="slide-content">
           <div class="split-slide">
             <div class="text-column">
@@ -54,7 +54,7 @@
                 <p-chart #clsChart type="line" [data]="clsChartData" [options]="clsChartOptions"></p-chart>
               </div>
               <div class="table-wrapper">
-                <p-table [value]="users" responsiveLayout="scroll">
+                <p-table [value]="clsTableData" responsiveLayout="scroll">
                   <ng-template pTemplate="header">
                     <tr>
                       <th>Class</th>
@@ -89,10 +89,10 @@
             </div>
           </div>
         </div>
-      </ng-template> -->
+      </ng-template> 
 
 
-      <ng-template>
+     <ng-template>
         <div class="slide-content">
           <div class="split-slide">
             <div class="text-column">
@@ -138,6 +138,165 @@
             </div>
           </div>
         </div>
+      </ng-template>  
+
+
+     <ng-template>
+        <div class="slide-content">
+            <div class="split-slide">
+                <div class="text-column">
+                    <h1>Transfer Learning</h1>
+                    <h2>Extracting YOLO Backbone</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel explicabo error deserunt deleniti!
+                        Eos fuga commodi, qui voluptatibus aspernatur, dolores pariatur natus eaque facilis assumenda
+                        accusantium, mollitia molestiae? Ullam, temporibus!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque voluptatum animi sit esse,
+                        laborum eveniet error eligendi nostrum accusantium, maxime et impedit iure fugit voluptates
+                        officiis tempore saepe adipisci. Blanditiis?
+                    </p>
+                    <div class="center-contents">
+                        <div class="table-wrapper">
+                            <p-table [value]="tlTableData" responsiveLayout="scroll">
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th>Stage</th>
+                                        <th>max|∆|</th>
+                                        <th>mean|∆|</th>
+                                    </tr>
+
+                                </ng-template>
+                                <ng-template pTemplate="body" let-tlTableData>
+                                    <tr>
+                                        <td>{{ tlTableData.class }}</td>
+                                        <td>{{ tlTableData.precision }}</td>
+                                        <td>{{ tlTableData.recall }}</td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-column ">
+                    <div class="yolo-arch-wrapper">
+                         <!-- <img src="assets/images/keras/yolo_backbone.png" alt="Model Diagram" />  -->
+                        <img src="assets/images/keras/yolo_backbone.SVG" alt="Model Diagram" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template> 
+
+
+     <ng-template>
+        <div class="slide-content">
+          <div class="split-slide">
+            <div class="text-column">
+                <h1>Keras Classification Results</h1>
+                <h2>YOLO Backbone + Keras Classificator</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel explicabo error deserunt deleniti! Eos fuga commodi, qui voluptatibus aspernatur, dolores pariatur natus eaque facilis assumenda accusantium, mollitia molestiae? Ullam, temporibus!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque voluptatum animi sit esse, laborum eveniet error eligendi nostrum accusantium, maxime et impedit iure fugit voluptates officiis tempore saepe adipisci. Blanditiis?
+              </p>
+            </div>
+    
+            <div class="result-column">
+              <div class="chart-wrapper">
+                <div class="zoom-reset-wrapper"> <button (click)="resetZoomTfBase()">Reset zoom</button></div>
+                <p-chart #clsTfBase type="line" [data]="clsTlBaseChartData" [options]="clsChartOptions"></p-chart>
+              </div>
+              <div class="table-wrapper">
+                <p-table [value]="clsTableData" responsiveLayout="scroll">
+                  <ng-template pTemplate="header">
+                    <tr>
+                        <th>Class</th>
+                        <th>Precision</th>
+                        <th>Recall</th>
+                        <th>F1-score</th>
+                        <th>Support</th>
+                      </tr>
+    
+                  </ng-template>
+                  <ng-template pTemplate="body" let-clsTableData>
+                    <tr>
+                        <td>{{ clsTableData.class }}</td>
+                        <td>{{ clsTableData.precision }}</td>
+                        <td>{{ clsTableData.recall }}</td>
+                        <td>{{ clsTableData.f1 }}</td>
+                        <td>{{ clsTableData.support }}</td>
+                      </tr>
+                  </ng-template>
+                </p-table>
+              </div>
+            </div>
+          </div>
+        </div>
       </ng-template>
+
+
+    <ng-template>
+        <div class="slide-content">
+            <div class="split-slide">
+                <div class="text-column">
+                    <h1>Keras Classification Results</h1>
+                    <h2>Fine Tunning</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel explicabo error deserunt deleniti!
+                        Eos fuga commodi, qui voluptatibus aspernatur, dolores pariatur natus eaque facilis assumenda
+                        accusantium, mollitia molestiae? Ullam, temporibus!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque voluptatum animi sit esse,
+                        laborum eveniet error eligendi nostrum accusantium, maxime et impedit iure fugit voluptates
+                        officiis tempore saepe adipisci. Blanditiis?
+                    <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis odit aliquid facere voluptatibus dolorum ipsa numquam, consequuntur esse illum optio voluptatem, quos ducimus omnis culpa aperiam! Deserunt, dolor! Voluptates, nesciunt.
+                </p>
+                <p>    
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta libero vel porro, nemo ab excepturi nisi ratione quod quidem, dolores quia fugiat, dolor provident illo ducimus recusandae blanditiis voluptatibus dolorem!
+
+                    </p>
+                </div>
+
+                <div class="result-column">
+
+                    <div class="multi-result-wrapper">
+                        <div class="center-contents">
+                            <p-selectbutton [options]="stageOptions" [allowEmpty]="false" optionLabel="label"   optionValue="value" aria-labelledby="basic" [(ngModel)]="selectedStage" (ngModelChange)="updateDisplay()" />
+                        </div>
+                        <div class="result-chart">
+                            <div class="zoom-reset-wrapper"> <button (click)="resetZoomTfStages()">Reset zoom</button></div>
+                            <p-chart #clsStageChart type="line" [data]="currentStageChartData"
+                                [options]="clsChartOptions"></p-chart>
+                        </div>
+                        <div class="result-table">
+                            <p-table [value]="currentStageTableData" responsiveLayout="scroll">
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th>Class</th>
+                                        <th>Precision</th>
+                                        <th>Recall</th>
+                                        <th>F1-score</th>
+                                        <th>Support</th>
+                                    </tr>
+    
+                                </ng-template>
+                                <ng-template pTemplate="body" let-stageTableData>
+                                    <tr>
+                                        <td>{{ stageTableData.class }}</td>
+                                        <td>{{ stageTableData.precision }}</td>
+                                        <td>{{ stageTableData.recall }}</td>
+                                        <td>{{ stageTableData.f1 }}</td>
+                                        <td>{{ stageTableData.support }}</td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+
+
+
 
 </app-slideshow-section>

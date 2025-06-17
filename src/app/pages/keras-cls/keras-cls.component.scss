@@ -5,17 +5,16 @@
 
     .keras-svg-wrapper {
         display: inline-block;
-        height: auto;
-        width: auto;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+        
+        max-height: 500px;
+        max-width: 500px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         border-radius: 1rem;
 
-        .keras-svg {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            display: block;
-        }
+    }
+
+    .yolo-arch-wrapper{
+        max-width: 90%;
     }
 }
 
@@ -62,4 +61,5 @@
       width: 248px;
      }
   }
+
 

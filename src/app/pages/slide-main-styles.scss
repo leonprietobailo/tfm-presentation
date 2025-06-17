@@ -147,47 +147,16 @@
         padding: 10px;
         background-color: #fff;
 
-        .zoom-reset-wrapper {
-          display: flex;
-          justify-content: right;
-          align-items: right;
+        
 
-          button {
-            background-color: #f8f8f871;
-            border: 1px solid #d1d5db; 
-            border-radius: 0.75rem; 
-            padding: 0.4rem 1rem;
-            font-size: 0.875rem;
-            font-weight: 250;
-            color: #9c9c9c; 
-            cursor: pointer;
-            transition: all 0.2s ease-in-out;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-          
-            &:hover {
-              background-color: #e5e7eb;
-              border-color: #9ca3af;
-            }
-          
-            &:active {
-              background-color: #d1d5db;
-              transform: scale(0.98);
-            }
-          
-            &:focus {
-              outline: none;
-              box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
-            }
-          }
-        }
-      }
 
-      .table-wrapper {
-        width: 90%;
-        border-radius: 18px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        overflow-x: auto;
-      }
+    }
+
+    .table-wrapper {
+      width: 90%;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      overflow-x: auto;
     }
   }
 }
@@ -235,4 +204,57 @@
   .next-btn:focus .arrow {
     transform: translateX(5px);
   }
+}
+
+.center-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.multi-result-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  background-color: #fff;
+  width: 90%;
+  border-radius: 18px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 16px;
+}
+
+.zoom-reset-wrapper {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+
+  button {
+    background-color: #f8f8f871;
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 250;
+    color: #9c9c9c;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      background-color: #e5e7eb;
+      border-color: #9ca3af;
+    }
+
+    &:active {
+      background-color: #d1d5db;
+      transform: scale(0.98);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+    }
+  }
+}
 }
