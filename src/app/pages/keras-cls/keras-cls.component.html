@@ -49,7 +49,8 @@
             </div>
             <div class="result-column">
               <div class="chart-wrapper">
-                <div class="zoom-reset-wrapper"> <button (click)="resetZoomCls()">Reset zoom</button>
+                <div class="zoom-reset-wrapper">
+                    <p-button label="Reset Zoom" [rounded]="false" severity="secondary" (onClick)="resetZoomCls()" />
                 </div>
                 <p-chart #clsChart type="line" [data]="clsChartData" [options]="clsChartOptions"></p-chart>
               </div>
@@ -78,8 +79,8 @@
                     <tr>
                       <td colspan="5">
                         <div style="display: flex; justify-content: center; align-items: center;">
-                          <p style="margin: auto;"><strong sty>Accuracy: 99.86%</strong></p>
-                          <p style="margin: auto;"><strong sty>Inference Time: 3.98 ms</strong></p>
+                          <p style="margin: auto;"><strong sty>Accuracy: 100%</strong></p>
+                          <p style="margin: auto;"><strong sty>Inference Time: 35.15 ms</strong></p>
                         </div>
                       </td>
                     </tr>
@@ -109,7 +110,10 @@
     
             <div class="result-column">
               <div class="chart-wrapper">
-                <div class="zoom-reset-wrapper"> <button (click)="resetZoomClsCrop()">Reset zoom</button></div>
+                <div class="zoom-reset-wrapper"> 
+                    <p-button label="Reset Zoom" [rounded]="false" severity="secondary" (onClick)="resetZoomClsCrop()" />
+            
+                </div>
                 <p-chart #clsCropChart type="line" [data]="clsCropChartData" [options]="clsChartOptions"></p-chart>
               </div>
               <div class="table-wrapper">
@@ -132,6 +136,16 @@
                         <td>{{ clsTableData.f1 }}</td>
                         <td>{{ clsTableData.support }}</td>
                       </tr>
+                  </ng-template>
+                  <ng-template pTemplate="footer">
+                    <tr>
+                      <td colspan="5">
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                          <p style="margin: auto;"><strong sty>Accuracy: 100%</strong></p>
+                          <p style="margin: auto;"><strong sty>Inference Time: 35.78 ms</strong></p>
+                        </div>
+                      </td>
+                    </tr>
                   </ng-template>
                 </p-table>
               </div>
@@ -168,9 +182,9 @@
                                 </ng-template>
                                 <ng-template pTemplate="body" let-tlTableData>
                                     <tr>
-                                        <td>{{ tlTableData.class }}</td>
-                                        <td>{{ tlTableData.precision }}</td>
-                                        <td>{{ tlTableData.recall }}</td>
+                                        <td>{{ tlTableData.stage }}</td>
+                                        <td>{{ formatScientific(tlTableData.maxd) }}</td>
+                                        <td>{{ formatScientific(tlTableData.meand) }}</td>
                                     </tr>
                                 </ng-template>
                             </p-table>
@@ -180,7 +194,7 @@
                 <div class="image-column ">
                     <div class="yolo-arch-wrapper">
                          <!-- <img src="assets/images/keras/yolo_backbone.png" alt="Model Diagram" />  -->
-                        <img src="assets/images/keras/yolo_backbone.SVG" alt="Model Diagram" />
+                        <img src="assets/images/keras/yolo_backbone.svg" alt="Model Diagram" />
                     </div>
                 </div>
             </div>
@@ -202,11 +216,13 @@
     
             <div class="result-column">
               <div class="chart-wrapper">
-                <div class="zoom-reset-wrapper"> <button (click)="resetZoomTfBase()">Reset zoom</button></div>
-                <p-chart #clsTfBase type="line" [data]="clsTlBaseChartData" [options]="clsChartOptions"></p-chart>
+                <div class="zoom-reset-wrapper">
+                     <p-button label="Reset Zoom" [rounded]="false" severity="secondary" (onClick)="resetZoomTfBase()" />
+                </div>
+                     <p-chart #clsTfBase type="line" [data]="clsTlBaseChartData" [options]="clsChartOptions"></p-chart>
               </div>
               <div class="table-wrapper">
-                <p-table [value]="clsTableData" responsiveLayout="scroll">
+                <p-table [value]="clsBaseTableData" responsiveLayout="scroll">
                   <ng-template pTemplate="header">
                     <tr>
                         <th>Class</th>
@@ -225,6 +241,16 @@
                         <td>{{ clsTableData.f1 }}</td>
                         <td>{{ clsTableData.support }}</td>
                       </tr>
+                  </ng-template>
+                  <ng-template pTemplate="footer">
+                    <tr>
+                      <td colspan="5">
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                          <p style="margin: auto;"><strong sty>Accuracy: 95.24%</strong></p>
+                          <p style="margin: auto;"><strong sty>Inference Time: 53.79 ms</strong></p>
+                        </div>
+                      </td>
+                    </tr>
                   </ng-template>
                 </p-table>
               </div>
@@ -263,7 +289,9 @@
                             <p-selectbutton [options]="stageOptions" [allowEmpty]="false" optionLabel="label"   optionValue="value" aria-labelledby="basic" [(ngModel)]="selectedStage" (ngModelChange)="updateDisplay()" />
                         </div>
                         <div class="result-chart">
-                            <div class="zoom-reset-wrapper"> <button (click)="resetZoomTfStages()">Reset zoom</button></div>
+                            <div class="zoom-reset-wrapper"> 
+                                <p-button label="Reset Zoom" [rounded]="false" severity="secondary" (onClick)="resetZoomTfStages()" />
+                            </div>
                             <p-chart #clsStageChart type="line" [data]="currentStageChartData"
                                 [options]="clsChartOptions"></p-chart>
                         </div>
@@ -288,6 +316,16 @@
                                         <td>{{ stageTableData.support }}</td>
                                     </tr>
                                 </ng-template>
+                                <ng-template pTemplate="footer">
+                                    <tr>
+                                      <td colspan="5">
+                                        <div style="display: flex; justify-content: center; align-items: center;">
+                                          <p style="margin: auto;"><strong sty>Accuracy: {{ currentStageAccuracy }}%</strong></p>
+                                          <p style="margin: auto;"><strong sty>Inference Time: {{ currentStageInferenceTime }} ms</strong></p>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </ng-template>
                             </p-table>
                         </div>
                     </div>

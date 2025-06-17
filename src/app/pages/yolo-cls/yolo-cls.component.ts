@@ -13,14 +13,14 @@ import zoomPlugin from 'chartjs-plugin-zoom';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ChartData } from '../../models/chart-data-model';
 import { Router } from '@angular/router';
-
+import { ButtonModule } from 'primeng/button';
 
 Chart.register(...registerables, zoomPlugin);
 
 @Component({
   selector: 'app-yolo-cls',
   standalone: true,
-  imports: [SlideshowSectionComponent, ChartModule, TableModule, HttpClientModule],
+  imports: [SlideshowSectionComponent, ChartModule, TableModule, HttpClientModule, ButtonModule],
   templateUrl: './yolo-cls.component.html',
   styleUrls: ['../slide-main-styles.scss', './yolo-cls.component.scss']
 })

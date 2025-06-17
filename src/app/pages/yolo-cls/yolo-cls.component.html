@@ -1,42 +1,42 @@
 <app-slideshow-section>
   <ng-template>
-        <div class="slide-content">
-            <div class="split-slide">
-                <div class="text-column">
-                    <h1>YOLO Framework</h1>
-                    <p>
-                        The YOLO (You Only Look Once) framework, developed and maintained by Ultralytics, is among the
-                        most powerful and widely adopted tools in modern computer vision. Initially introduced as a
-                        novel approach to object detection that formulates the task as a single-stage regression
-                        problem, YOLO has evolved through several versions—culminating in YOLOv11—with significant
-                        improvements in accuracy, speed, and usability. </p>
+    <div class="slide-content">
+      <div class="split-slide">
+        <div class="text-column">
+          <h1>YOLO Framework</h1>
+          <p>
+            The YOLO (You Only Look Once) framework, developed and maintained by Ultralytics, is among the
+            most powerful and widely adopted tools in modern computer vision. Initially introduced as a
+            novel approach to object detection that formulates the task as a single-stage regression
+            problem, YOLO has evolved through several versions—culminating in YOLOv11—with significant
+            improvements in accuracy, speed, and usability. </p>
 
-                    <p>
-                        Its primary strength lies in the high inference speed of its models, which makes it suitable for
-                        real-time applications such as autonomous driving, security surveillance, and industrial
-                        inspection. YOLO provides a diverse suite of pre-trained models tailored for various computer
-                        vision tasks, including object detection, classification, and segmentation.
-                    </p>
-                    <p>
-                        Furthermore, the framework greatly simplifies the training process by abstracting away complex
-                        aspects such as class imbalance, data augmentation, and model optimization. This user-centric
-                        design makes it highly accessible for both researchers and practitioners.
-                    </p>
-                </div>
-                <div class="grid-wrapper">
-                    <div class="image-grid">
-                        <img src="assets/images/yolo/banner_detect.png" alt="Detection Banner" />
-                        <img src="assets/images/yolo/banner_segment.png" alt="Segmentation Banner" />
-                        <img src="assets/images/yolo/banner_classify.png" alt="Classification Banner" />
-                        <img src="assets/images/yolo/banner_pose.png" alt="Pose Banner" />
-                        <img src="assets/images/yolo/banner_obb.png" alt="Oriented Bounding Box Banner" />
-                        <img src="assets/images/yolo/banner_track.png" alt="Track Banner" />
-
-                    </div>
-                </div>
-            </div>
+          <p>
+            Its primary strength lies in the high inference speed of its models, which makes it suitable for
+            real-time applications such as autonomous driving, security surveillance, and industrial
+            inspection. YOLO provides a diverse suite of pre-trained models tailored for various computer
+            vision tasks, including object detection, classification, and segmentation.
+          </p>
+          <p>
+            Furthermore, the framework greatly simplifies the training process by abstracting away complex
+            aspects such as class imbalance, data augmentation, and model optimization. This user-centric
+            design makes it highly accessible for both researchers and practitioners.
+          </p>
         </div>
-    </ng-template> 
+        <div class="grid-wrapper">
+          <div class="image-grid">
+            <img src="assets/images/yolo/banner_detect.png" alt="Detection Banner" />
+            <img src="assets/images/yolo/banner_segment.png" alt="Segmentation Banner" />
+            <img src="assets/images/yolo/banner_classify.png" alt="Classification Banner" />
+            <img src="assets/images/yolo/banner_pose.png" alt="Pose Banner" />
+            <img src="assets/images/yolo/banner_obb.png" alt="Oriented Bounding Box Banner" />
+            <img src="assets/images/yolo/banner_track.png" alt="Track Banner" />
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
 
   <ng-template>
     <div class="slide-content">
@@ -54,7 +54,8 @@
         </div>
         <div class="result-column">
           <div class="chart-wrapper">
-            <div class="zoom-reset-wrapper"> <button (click)="resetZoomCls()">Reset zoom</button>
+            <div class="zoom-reset-wrapper">
+              <p-button label="Reset Zoom" [rounded]="false" severity="secondary" (onClick)="resetZoomCls()" />
             </div>
             <p-chart #clsChart type="line" [data]="chartData" [options]="chartOptions"></p-chart>
           </div>
@@ -146,7 +147,9 @@
 
         <div class="result-column">
           <div class="chart-wrapper">
-            <div class="zoom-reset-wrapper"> <button (click)="resetZoomSeg1()">Reset zoom</button></div>
+            <div class="zoom-reset-wrapper">
+              <p-button label="Reset Zoom" [rounded]="false" severity="secondary" (onClick)="resetZoomSeg1()" />
+            </div>
             <p-chart #segChart1 type="line" [data]="chartDataSeg1" [options]="chartOptionsSeg"></p-chart>
           </div>
           <div class="table-wrapper">
@@ -170,6 +173,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </ng-template>
 
@@ -220,7 +224,9 @@
 
         <div class="result-column">
           <div class="chart-wrapper">
-            <div class="zoom-reset-wrapper"> <button (click)="resetZoomSeg2()">Reset zoom</button></div>
+            <div class="zoom-reset-wrapper">
+              <p-button label="Reset Zoom" [rounded]="false" severity="secondary" (onClick)="resetZoomSeg2()" />
+            </div>
             <p-chart #segChart2 type="line" [data]="chartDataSeg2" [options]="chartOptionsSeg"></p-chart>
           </div>
           <div class="table-wrapper">
