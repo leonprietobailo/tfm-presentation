@@ -1,1 +1,107 @@
-<p>gradcam works!</p>
+<app-slideshow-section>
+
+  <ng-template>
+    <div class="slide-content">
+      <div class="split-slide">
+        <div class="text-column">
+          <h1>GradCAM</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, accusantium nostrum maiores quibusdam
+            ratione quo vitae dolorum sapiente consequuntur tempora voluptatem temporibus! Molestias quam mollitia optio
+            voluptate aut exercitationem architecto.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate reprehenderit dicta eveniet perferendis
+            et nostrum excepturi, quia repudiandae sapiente, recusandae earum corporis suscipit nemo accusantium sed ad
+            tenetur. Tempore, quam.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, accusantium nostrum maiores quibusdam
+            ratione quo vitae dolorum sapiente consequuntur tempora voluptatem temporibus! Molestias quam mollitia optio
+            voluptate aut exercitationem architecto.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate reprehenderit dicta eveniet perferendis
+            et nostrum excepturi, quia repudiandae sapiente, recusandae earum corporis suscipit nemo accusantium sed ad
+            tenetur. Tempore, quam.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, accusantium nostrum maiores quibusdam
+            ratione quo vitae dolorum sapiente consequuntur tempora voluptatem temporibus! Molestias quam mollitia optio
+            voluptate aut exercitationem architecto.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate reprehenderit dicta eveniet perferendis
+            et nostrum excepturi, quia repudiandae sapiente, recusandae earum corporis suscipit nemo accusantium sed ad
+            tenetur. Tempore, quam.
+          </p>
+        </div>
+        <div class="image-column">
+          <div class="image-compare-wrapper">
+          <p-imagecompare>
+            <ng-template #left>
+              <img class="gradcam-dog" src="assets/images/gradcam/grad_cam_dog.jpg" alt="Model Diagram" />
+            </ng-template>
+            <ng-template #right>
+              <img class="gradcam-dog" src="assets/images/gradcam/grad_cam_dog_prev.jpg" alt="Model Diagram" />
+            </ng-template>
+          </p-imagecompare>
+        </div>
+      </div></div>
+    </div>
+  </ng-template>
+
+
+  <ng-template>
+    <div class="slide-content">
+      <div class="split-slide">
+        <div class="text-column">
+          <h1>GradCAM</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, accusantium nostrum maiores quibusdam
+            ratione quo vitae dolorum sapiente consequuntur tempora voluptatem temporibus! Molestias quam mollitia optio
+            voluptate aut exercitationem architecto.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate reprehenderit dicta eveniet perferendis
+            et nostrum excepturi, quia repudiandae sapiente, recusandae earum corporis suscipit nemo accusantium sed ad
+            tenetur. Tempore, quam.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, accusantium nostrum maiores quibusdam
+            ratione quo vitae dolorum sapiente consequuntur tempora voluptatem temporibus! Molestias quam mollitia optio
+            voluptate aut exercitationem architecto.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate reprehenderit dicta eveniet perferendis
+            et nostrum excepturi, quia repudiandae sapiente, recusandae earum corporis suscipit nemo accusantium sed ad
+            tenetur. Tempore, quam.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, accusantium nostrum maiores quibusdam
+            ratione quo vitae dolorum sapiente consequuntur tempora voluptatem temporibus! Molestias quam mollitia optio
+            voluptate aut exercitationem architecto.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate reprehenderit dicta eveniet perferendis
+            et nostrum excepturi, quia repudiandae sapiente, recusandae earum corporis suscipit nemo accusantium sed ad
+            tenetur. Tempore, quam.
+          </p>
+        </div>
+        <div class="image-column">
+          <div class="gradcam-wrapper">
+            <div class="gradcam-select-wrapper">
+              <p-selectbutton [allowEmpty]="false" [options]="stateOptions" [(ngModel)]="value" optionLabel="label"
+                optionValue="value" aria-labelledby="basic" />
+            </div>
+            <div class="gradcam-image-grid">
+              @for (img of displayedImages; track img) {
+              <img [src]="img" class="gradcam-grid-img fade" [class.show]="imagesVisible" alt="GradCAM" />
+              }
+            </div>
+          </div>
+
+
+
+          <!-- <p-imagecompare class="shadow-lg rounded-2xl">
+                    <ng-template #left>
+                        <img src="https://primefaces.org/cdn/primevue/images/compare/island1.jpg" />
+                    </ng-template>
+                    <ng-template #right>
+                        <img src="https://primefaces.org/cdn/primevue/images/compare/island2.jpg" />
+                    </ng-template>
+                </p-imagecompare>                 -->
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+</app-slideshow-section>

@@ -615,3 +615,10 @@ body {
 .p-steps-item-label {
   font-size: 0.9rem;   /* adjust as needed, e.g., 0.9rem for smaller */
 }
+
+:root{
+    --p-imagecompare-handle-size: 30px !important;
+    --p-imagecompare-handle-hover-size: 40px !important;
+    --p-imagecompare-handle-background: #3730a321 !important;
+    --p-imagecompare-handle-hover-background: rgb(55 48 163 / 21%) !important;
+}
