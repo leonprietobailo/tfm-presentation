@@ -98,7 +98,8 @@ export class YoloClsComponent implements AfterViewInit {
           title: {
             display: true,
             text: 'Epochs'
-          }
+          },
+          min: 20
         },
         y: {
           beginAtZero: true,
@@ -133,7 +134,8 @@ export class YoloClsComponent implements AfterViewInit {
           title: {
             display: true,
             text: 'Epochs'
-          }
+          },
+          min: 20
         },
         y: {
           beginAtZero: true,

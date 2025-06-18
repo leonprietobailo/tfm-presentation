@@ -317,7 +317,7 @@
               <div class="zoom-reset-wrapper">
                 <p-button label="Reset Zoom" [rounded]="false" severity="secondary" (onClick)="resetZoomTfStages()" />
               </div>
-              <p-chart #clsStageChart type="line" [data]="currentStageChartData" [options]="clsChartOptions"></p-chart>
+              <p-chart #clsStageChart type="line" [data]="currentStageChartData" [options]="stageChartOptions"></p-chart>
             </div>
             <div class="result-table">
               <p-table [value]="currentStageTableData" responsiveLayout="scroll">

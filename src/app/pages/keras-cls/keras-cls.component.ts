@@ -42,6 +42,7 @@ export class KerasClsComponent {
   clsTlStage67ChartData!: ChartData;
 
   clsChartOptions: any;
+  stageChartOptions: any;
 
   stageOptions: any[] = [{ label: 'Stage 8-9', value: 'stage89' }, { label: 'Stage 6-7', value: 'stage67' }];
 
@@ -168,7 +169,44 @@ export class KerasClsComponent {
           title: {
             display: true,
             text: 'Epochs'
+          },
+          min: 20
+        },
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Loss'
           }
+        }
+      }
+    };
+
+    this.stageChartOptions = {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Training and Validation Losses vs Epochs',
+        },
+        zoom: {
+          zoom: {
+            drag: {
+              enabled: true
+            },
+            mode: 'x'
+          }
+        }
+      },
+      scales: {
+        x: {
+          type: 'linear',
+          position: 'bottom',
+          title: {
+            display: true,
+            text: 'Epochs'
+          },
+          min: 1
         },
         y: {
           beginAtZero: true,
