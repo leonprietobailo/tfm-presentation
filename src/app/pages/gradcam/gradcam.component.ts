@@ -3,6 +3,7 @@ import { SlideshowSectionComponent } from "../../components/slideshow-section/sl
 import { ImageCompareModule } from 'primeng/imagecompare';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 
@@ -13,6 +14,8 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['../slide-main-styles.scss', './gradcam.component.scss'],
 })
 export class GradcamComponent {
+
+  constructor(private router: Router) { }
   
   stateOptions: any[] = [{ label: 'Original', value: 'original' },{ label: 'GradCAM', value: 'gradcam' }];
 
@@ -46,6 +49,10 @@ export class GradcamComponent {
     this.displayedImages =
       type === 'original' ? this.originalImages : this.gradcamImages;
   }
+
+  goNext() {
+    this.router.navigate(['conclusion']);
+    }
 
 }
 

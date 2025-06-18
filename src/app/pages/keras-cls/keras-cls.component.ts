@@ -209,6 +209,9 @@ export class KerasClsComponent {
     return val.toExponential(2); 
   }
 
+  goNext() {
+    this.router.navigate(['gradcam']);
+    }
 
 
 }
