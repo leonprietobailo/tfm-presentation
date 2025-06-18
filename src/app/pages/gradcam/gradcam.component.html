@@ -6,42 +6,29 @@
         <div class="text-column">
           <h1>GradCAM</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, accusantium nostrum maiores quibusdam
-            ratione quo vitae dolorum sapiente consequuntur tempora voluptatem temporibus! Molestias quam mollitia optio
-            voluptate aut exercitationem architecto.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate reprehenderit dicta eveniet perferendis
-            et nostrum excepturi, quia repudiandae sapiente, recusandae earum corporis suscipit nemo accusantium sed ad
-            tenetur. Tempore, quam.
+            Gradient-weighted Class Activation Mapping (Grad-CAM) is a prominent technique in Explainable Artificial Intelligence (XAI) that enhances the interpretability of convolutional neural networks (CNNs). It generates class-specific heatmaps that highlight the regions of an input image most influential in a model’s decision, enabling users to visualize and understand the reasoning behind predictions. Unlike earlier methods, Grad-CAM does not require changes to the model architecture or retraining, making it compatible with a wide range of pre-trained networks.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, accusantium nostrum maiores quibusdam
-            ratione quo vitae dolorum sapiente consequuntur tempora voluptatem temporibus! Molestias quam mollitia optio
-            voluptate aut exercitationem architecto.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate reprehenderit dicta eveniet perferendis
-            et nostrum excepturi, quia repudiandae sapiente, recusandae earum corporis suscipit nemo accusantium sed ad
-            tenetur. Tempore, quam.
+            The method operates by computing the gradient of the output for a target class with respect to the feature maps of a selected convolutional layer. These gradients are globally averaged to produce importance weights, which are then used to compute a weighted sum of the feature maps. Applying a ReLU activation isolates the positively contributing features, and the resulting heatmap is upsampled and overlaid on the original image to indicate areas of high relevance.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, accusantium nostrum maiores quibusdam
-            ratione quo vitae dolorum sapiente consequuntur tempora voluptatem temporibus! Molestias quam mollitia optio
-            voluptate aut exercitationem architecto.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate reprehenderit dicta eveniet perferendis
-            et nostrum excepturi, quia repudiandae sapiente, recusandae earum corporis suscipit nemo accusantium sed ad
-            tenetur. Tempore, quam.
+            Grad-CAM is particularly useful for model validation and debugging, as it helps determine whether a model is focusing on semantically meaningful regions or relying on irrelevant cues. In sensitive domains such as healthcare and autonomous systems, this transparency fosters trust and supports accountability. As part of the broader goals of XAI, Grad-CAM plays a crucial role in promoting the responsible deployment of deep learning models by making their internal decision processes more interpretable and accessible.
           </p>
+
         </div>
         <div class="image-column">
           <div class="image-compare-wrapper">
-          <p-imagecompare>
-            <ng-template #left>
-              <img class="gradcam-dog" src="assets/images/gradcam/grad_cam_dog.jpg" alt="Model Diagram" />
-            </ng-template>
-            <ng-template #right>
-              <img class="gradcam-dog" src="assets/images/gradcam/grad_cam_dog_prev.jpg" alt="Model Diagram" />
-            </ng-template>
-          </p-imagecompare>
+            <p-imagecompare>
+              <ng-template #left>
+                <img class="gradcam-dog" src="assets/images/gradcam/grad_cam_dog.jpg" alt="Model Diagram" />
+              </ng-template>
+              <ng-template #right>
+                <img class="gradcam-dog" src="assets/images/gradcam/grad_cam_dog_prev.jpg" alt="Model Diagram" />
+              </ng-template>
+            </p-imagecompare>
+          </div>
         </div>
-      </div></div>
+      </div>
     </div>
   </ng-template>
 
@@ -51,30 +38,13 @@
       <div class="split-slide">
         <div class="text-column">
           <h1>GradCAM</h1>
+          <h2>Experiment with Pre-trained DenseNet121</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, accusantium nostrum maiores quibusdam
-            ratione quo vitae dolorum sapiente consequuntur tempora voluptatem temporibus! Molestias quam mollitia optio
-            voluptate aut exercitationem architecto.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate reprehenderit dicta eveniet perferendis
-            et nostrum excepturi, quia repudiandae sapiente, recusandae earum corporis suscipit nemo accusantium sed ad
-            tenetur. Tempore, quam.
-          </p>
+          Evaluation on the held-out test set confirmed that the network retained adequate predictive capability, validating the use of Grad-CAM for post-hoc interpretability. Heatmaps generated over the same test images consistently localized the most salient defect regions, mirroring the focal points a skilled human inspector would intuitively examine. This congruence between model attention and human reasoning substantiates the explanatory power of Grad-CAM and reinforces confidence in the automated system’s decision-making process.
+        </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, accusantium nostrum maiores quibusdam
-            ratione quo vitae dolorum sapiente consequuntur tempora voluptatem temporibus! Molestias quam mollitia optio
-            voluptate aut exercitationem architecto.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate reprehenderit dicta eveniet perferendis
-            et nostrum excepturi, quia repudiandae sapiente, recusandae earum corporis suscipit nemo accusantium sed ad
-            tenetur. Tempore, quam.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, accusantium nostrum maiores quibusdam
-            ratione quo vitae dolorum sapiente consequuntur tempora voluptatem temporibus! Molestias quam mollitia optio
-            voluptate aut exercitationem architecto.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate reprehenderit dicta eveniet perferendis
-            et nostrum excepturi, quia repudiandae sapiente, recusandae earum corporis suscipit nemo accusantium sed ad
-            tenetur. Tempore, quam.
-          </p>
+More challenging cases—those containing multiple subtle or diffuse defects—produced correspondingly dispersed activation patterns, indicating that the classifier aggregated evidence from several minor anomalies rather than relying on a single dominant feature. Although such heatmaps can appear less self-explanatory, they still expose the model’s internal weighting of ambiguous cues and thus remain valuable for debugging and refinement. Overall, the experiment demonstrates that Grad-CAM not only enhances the transparency of deep CNNs in industrial defect detection but also offers practical guidance for improving model reliability in complex visual scenarios.
+</p>
           <div class="next-btn-div">
             <button class="next-btn" (click)="goNext()">
               Conclusion <span class="arrow">→</span>
