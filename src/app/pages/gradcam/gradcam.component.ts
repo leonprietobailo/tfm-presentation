@@ -4,12 +4,13 @@ import { ImageCompareModule } from 'primeng/imagecompare';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ZoomOnHoverDirective } from './ZoomOnHoverDirective';
 
 
 
 @Component({
   selector: 'app-gradcam',
-  imports: [SlideshowSectionComponent, ImageCompareModule, SelectButtonModule, FormsModule],
+  imports: [SlideshowSectionComponent, ImageCompareModule, SelectButtonModule, FormsModule, ZoomOnHoverDirective],
   templateUrl: './gradcam.component.html',
   styleUrls: ['../slide-main-styles.scss', './gradcam.component.scss'],
 })

@@ -59,8 +59,18 @@ More challenging cases—those containing multiple subtle or diffuse defects—p
             </div>
             <div class="gradcam-image-grid">
               @for (img of displayedImages; track img) {
-              <img [src]="img" class="gradcam-grid-img fade" [class.show]="imagesVisible" alt="GradCAM" />
+  <div class="zoom-wrapper">
+    <img
+      [src]="img"
+      alt="GradCAM"
+      class="gradcam-grid-img fade"
+      [class.show]="imagesVisible"
+      appZoomOnHover       
+      [zoomScale]="2"       
+    />
+  </div>
               }
+
             </div>
           </div>
 
