@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   selector: 'app-introduction',
   imports: [SlideshowSectionComponent],
   templateUrl: './introduction.component.html',
-  styleUrl: '../slide-main-styles.scss'
+  styleUrls: ['../slide-main-styles.scss', './introduction.component.scss']
 })
 export class IntroductionComponent {
   constructor(private router: Router) { }

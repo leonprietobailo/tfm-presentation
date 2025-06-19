@@ -1,29 +1,43 @@
 <app-slideshow-section>
 
-    <ng-template>
-      <div class="slide-content">
-        <div class="split-slide">
-          <div class="text-column">
-            <h1>Conclusion</h1>
-            <p>
-            A key finding of this work is the superior performance of simpler models over more complex hybrid architectures. Despite the technical sophistication involved in integrating YOLOv8 backbones into Keras classifiers, this design did not surpass the accuracy or efficiency of standalone YOLOv8 classifiers or baseline Keras models trained on cropped images. This outcome underscores the value of architectural parsimony, where streamlined, well-regularised models often achieve better generalisation and are more practical for deployment. The results emphasize that, in industrial applications, predictive performance must be balanced against model complexity, interpretability, and implementation feasibility.
+  <ng-template>
+    <div class="slide-content">
+      <div class="split-slide">
+        <div class="text-column">
+          <h1>Conclusion</h1>
+          <p>
+            A key finding is the superior performance of <strong>simpler models</strong> over complex hybrid
+            architectures. Despite integrating YOLOv8 backbones into Keras classifiers, these hybrids did not outperform
+            <strong>standalone YOLOv8</strong> or <strong>Keras models</strong> on cropped images. This underscores the
+            importance of <strong>architectural simplicity</strong> for better generalization and deployment feasibility
+            in industrial contexts.
           </p>
           <p>
-
-            The success of the proposed models also highlights the potential of contemporary machine learning techniques, particularly transfer learning and data augmentation. These methods enabled effective training even with limited data availability, enhancing model robustness and reducing the need for large, fully labeled datasets. The thesis also opens the door to future exploration of semi-supervised learning paradigms, where models could benefit from both labeled and unlabeled data to further improve generalisation. These techniques are especially promising in industrial settings, where labeled defect data is often scarce, and model adaptability to new defect types is critical.
+            The study also highlights the effectiveness of <strong>transfer learning</strong> and <strong>data
+              augmentation</strong>, which improved robustness even with limited data. It points toward future
+            exploration of <strong>semi-supervised learning</strong> to leverage both labeled and unlabeled data,
+            addressing the common scarcity of defect annotations in industry.
           </p>
           <p>
-
-            Model interpretability emerged as a vital concern, addressed through the integration of explainable AI tools such as Gradient-weighted Class Activation Mapping (Grad-CAM). Grad-CAM visualizations provide transparency by revealing which image regions most influence a model’s predictions, thereby enhancing trust and accountability in automated decisions. This capability is particularly important in high-stakes manufacturing environments, where engineers must understand and validate the rationale behind classification outcomes. The inclusion of XAI tools not only supports debugging and model refinement but also facilitates regulatory compliance and fosters user confidence in AI-driven inspection systems.
+            <strong>Model interpretability</strong> was addressed through <strong>Grad-CAM</strong>, which enhanced
+            transparency by visualizing regions influencing predictions. This builds <strong>trust and
+              accountability</strong> in automated decisions, especially vital in manufacturing, supporting debugging,
+            regulatory compliance, and user confidence.
           </p>
           <p>
-
-            Lastly, the thesis reflects a broader trend toward the democratization of computer vision, driven by rapid advancements in both software and hardware. The use of platforms like Roboflow for annotation and Google Colab for training demonstrates that powerful vision systems can be developed without specialized infrastructure. This accessibility lowers the barrier for small- and medium-sized enterprises to adopt AI technologies, enabling scalable prototyping and experimentation. Additionally, the emerging support for lightweight inference on edge devices further expands deployment possibilities, allowing real-time defect detection to be embedded directly within production environments. These developments mark a significant step toward inclusive, industry-wide digital transformation.       
+            Finally, the thesis reflects the ongoing <strong>democratization of computer vision</strong>. Tools like
+            Roboflow and Google Colab enable development without specialized infrastructure, empowering smaller
+            enterprises. Combined with <strong>edge device inference</strong>, these advances support scalable,
+            real-time defect detection across diverse production settings.
           </p>
-          </div>
+
+        </div>
+        <div class="image-column">
+          <img src="assets/images/conclusion/elieen-collings-hog.gif" alt="Elieen Collins">
+        </div>
       </div>
-      </div>
-    </ng-template>
-  
-  
-  </app-slideshow-section>
+    </div>
+  </ng-template>
+
+
+</app-slideshow-section>

@@ -1,26 +1,22 @@
 <app-slideshow-section>
+
   <ng-template>
     <div class="slide-content">
       <div class="split-slide">
         <div class="text-column">
           <h1>YOLO Framework</h1>
-          <p>
-            The YOLO (You Only Look Once) framework, developed and maintained by Ultralytics, is among the
-            most powerful and widely adopted tools in modern computer vision. Initially introduced as a
-            novel approach to object detection that formulates the task as a single-stage regression
-            problem, YOLO has evolved through several versions—culminating in YOLOv11—with significant
-            improvements in accuracy, speed, and usability. </p>
-
-          <p>
-            Its primary strength lies in the high inference speed of its models, which makes it suitable for
-            real-time applications such as autonomous driving, security surveillance, and industrial
-            inspection. YOLO provides a diverse suite of pre-trained models tailored for various computer
-            vision tasks, including object detection, classification, and segmentation.
+          <p> The <strong>YOLO (You Only Look Once)</strong> framework, developed by Ultralytics, is a widely adopted
+            and powerful tool in modern computer vision. Initially proposed as a <strong>single-stage regression
+              approach to object detection</strong>, it has evolved up to <strong>YOLOv11</strong> with notable gains in
+            <strong>accuracy, speed, and usability</strong>.
           </p>
-          <p>
-            Furthermore, the framework greatly simplifies the training process by abstracting away complex
-            aspects such as class imbalance, data augmentation, and model optimization. This user-centric
-            design makes it highly accessible for both researchers and practitioners.
+          <p> A key strength is its <strong>high inference speed</strong>, making it ideal for <strong>real-time
+              applications</strong> such as autonomous driving, surveillance, and industrial inspection. YOLO also
+            offers a wide range of <strong>pre-trained models</strong> for tasks like detection, classification, and
+            segmentation. </p>
+          <p> Its design abstracts complex processes like <strong>class imbalance handling</strong>, <strong>data
+              augmentation</strong>, and <strong>model optimization</strong>, making it highly
+            <strong>user-friendly</strong> for both researchers and developers.
           </p>
         </div>
         <div class="grid-wrapper">
@@ -44,9 +40,11 @@
         <div class="text-column">
           <h1>YOLOv8 Classification Results</h1>
           <p>
-            The first model trained in this study is the YOLOv8 Classification model. This process involves fine-tuning
+            The first model trained in this study is the <strong>YOLOv8 Classification</strong> model. This process
+            involves fine-tuning
             a pretrained classification model from the YOLO framework to develop a functional system capable of
-            accurately classifying the condition of the components. The model is trained for a total of 100 epochs.
+            accurately classifying the <strong>condition</strong> of the components. The model is trained for a total of
+            100 epochs.
           </p>
           <div class="image-wrapper">
             <img src="assets/snippets/yolo_train.svg" alt="YOLOv8 Classification Model Train Function">
@@ -104,16 +102,14 @@
       <div class="split-slide">
         <div class="text-column">
           <h1>Semi-supervised Learning</h1>
-          <p>
-            The semi-supervised paradigm combines a small amount of labeled data with a large amount of unlabeled data
-            to improve learning performance. It leverages the structure in unlabeled data to guide the model, making it
-            especially useful when labeled data is scarce or costly. This approach balances the strengths of supervised
-            and unsupervised learning.
-          </p>
-          <p>
-            The semi-supervised paradigm is used to train segmentation models capable of distinguishing between the
-            interior and the background of the part. The Roboflow tool is employed to label the regions of the image
-            corresponding to the part. </p>
+          <p> The <strong>semi-supervised paradigm</strong> combines a small set of <strong>labeled data</strong> with a
+            larger set of <strong>unlabeled data</strong> to enhance learning performance. By exploiting the inherent
+            <strong>structure in unlabeled data</strong>, it becomes highly effective when labeled data is
+            <strong>limited or expensive</strong>, striking a balance between <strong>supervised and unsupervised
+              learning</strong>. </p>
+          <p> This approach is applied to train <strong>segmentation models</strong> that differentiate the
+            <strong>interior from the background</strong> of parts. The <strong>Roboflow tool</strong> is used to
+            annotate image regions corresponding to the parts. </p>
         </div>
         <!-- <div class="grid-wrapper">
           <div class="image-grid_2">
@@ -136,9 +132,9 @@
           <h1>YOLOv8 Segmentation Results</h1>
           <h2>First Segmenter</h2>
           <p>
-            The initial segmentation model, developed using a supervised learning paradigm and trained on a relatively
+            The <strong>initial</strong> segmentation model, developed using a <strong>supervised</strong> learning paradigm and trained on a relatively
             small dataset comprising only 100 annotated images, has already yielded good results. Despite the limited
-            amount of training data, the model demonstrates a notable ability to accurately delineate target regions.
+            amount of training data, the model demonstrates a <strong>notable ability</strong> to accurately delineate target regions.
           </p>
           <div class="grid-wrapper">
             <div class="image-grid_3">
@@ -181,6 +177,7 @@
   </ng-template>
 
 
+
   <ng-template>
     <div class="slide-content">
       <div class="split-slide">
@@ -188,12 +185,12 @@
           <h1>YOLOv8 Segmentation Results</h1>
           <h2>Second Segmenter</h2>
           <p>
-            The second segmentation model, trained on a pseudo-labeled dataset within a semi-supervised learning
-            framework, demonstrates a slight improvement over the baseline model trained under a purely supervised
-            paradigm. This approach enhances the model’s generalization capabilities, leading to more accurate and
-            robust segmentation performance compared to the initial supervised counterpart.
+            The second segmentation model, trained on a <strong>pseudo-labeled</strong> dataset within a <strong>semi-supervised</strong> learning
+            framework, demonstrates a <strong>slight</strong> improvement over the baseline model trained under a purely supervised
+            paradigm. This approach <strong>enhances</strong> the model’s generalization capabilities, leading to more <strong>accurate and
+            robust</strong> segmentation performance compared to the initial supervised counterpart.
           </p>
-          <div class="grid-wrapper">
+          <!-- <div class="grid-wrapper">
             <div class="image-grid_4">
               <img src="assets/images/segmentation/mosaic/seg_augmentation-0-0.png"
                 alt="Segmentation Augmentation Mosaic">
@@ -215,12 +212,17 @@
                 alt="Segmentation Augmentation Mosaic">
               <img src="assets/images/segmentation/mosaic/seg_augmentation-2-1.png"
                 alt="Segmentation Augmentation Mosaic">
-              <!-- <img src="assets/images/segmentation/mosaic/seg_augmentation-2-2.png" alt="Segmentation Augmentation Mosaic">
+               <img src="assets/images/segmentation/mosaic/seg_augmentation-2-2.png" alt="Segmentation Augmentation Mosaic">
             <img src="assets/images/segmentation/mosaic/seg_augmentation-2-3.png" alt="Segmentation Augmentation Mosaic">
             <img src="assets/images/segmentation/mosaic/seg_augmentation-3-0.png" alt="Segmentation Augmentation Mosaic">
             <img src="assets/images/segmentation/mosaic/seg_augmentation-3-1.png" alt="Segmentation Augmentation Mosaic">
             <img src="assets/images/segmentation/mosaic/seg_augmentation-3-2.png" alt="Segmentation Augmentation Mosaic"> -->
-              <!-- <img src="assets/images/segmentation/mosaic/seg_augmentation-3-3.png" alt="Segmentation Augmentation Mosaic"> -->
+          <!-- <img src="assets/images/segmentation/mosaic/seg_augmentation-3-3.png" alt="Segmentation Augmentation Mosaic"> 
+            </div>
+          </div> -->
+          <div class="image-wrapper">
+            <div class="mosaic-gif-wrapper">
+              <img src="assets/images/segmentation/mosaic/mosaic.gif" alt="Segmentation Inference Gif">
             </div>
           </div>
         </div>
@@ -260,5 +262,6 @@
       </div>
     </div>
   </ng-template>
+
 
 </app-slideshow-section>

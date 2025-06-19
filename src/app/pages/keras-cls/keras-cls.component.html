@@ -6,23 +6,24 @@
         <div class="text-column">
           <h1>Keras Framework</h1>
           <p>
-            Keras is an open-source deep learning framework written in Python that simplifies the creation and training
-            of neural networks. It serves as a high-level API for backends like TensorFlow, offering an intuitive and
-            modular design ideal for rapid prototyping. With built-in support for layers, optimizers, and loss
-            functions, Keras is widely used in both research and industry for developing machine learning models.
+            <strong>Keras</strong> is a Python-based deep learning framework that simplifies building and training
+            neural networks. As a high-level API for TensorFlow, it offers a modular, user-friendly design with built-in
+            components for rapid prototyping.
           </p>
+
           <p>
-            One of Keras’s main advantages is its balance between ease of use and flexibility. It allows users to build
-            models quickly using a simple interface while also supporting more complex customizations when needed. Its
-            integration with TensorFlow provides powerful computational support, including GPU acceleration, making it
-            suitable for a variety of deep learning tasks.
+            It balances ease of use and flexibility, allowing both <strong>quick development</strong> and more <strong>advanced customizations.</strong>
+            Integration with TensorFlow enables GPU acceleration and broad deep learning support.
           </p>
+
           <p>
-            In computer vision, Keras is commonly used for applications such as image classification, object detection,
-            and segmentation. It includes ready-to-use convolutional layers and tools for image preprocessing and
-            augmentation. With access to pre-trained models like VGG or ResNet, Keras also supports transfer learning,
-            enabling efficient training even on small datasets.
+            In computer vision, Keras is used for tasks like image classification, detection, and segmentation. It
+            includes tools for preprocessing and supports transfer learning through pre-trained models such as
+            <strong>VGG</strong> and <strong>ResNet</strong>.
           </p>
+
+
+
         </div>
         <div class="image-column">
           <div class="keras-svg-wrapper">
@@ -40,14 +41,13 @@
         <div class="text-column">
           <h1>Keras Classification Results</h1>
           <h2>Simple Keras Classificator</h2>
-          <p>
-            The first Keras classification architecture is outlined below. It includes an input layer, followed by data
-            augmentation and preprocessing layers. The core of the model consists of several Conv2D layers grouped with
-            MaxPooling2D layers to progressively extract and downsample spatial features. The final layer is a Dense
-            layer with a single neuron and a sigmoid activation function, which outputs a probability for binary
-            classification. While softmax is more commonly used in multi-class computer vision tasks, sigmoid is
-            appropriate here due to the binary nature of the problem.
+          <p> The first <strong>Keras classification architecture</strong> includes an input layer, followed by
+            <strong>data augmentation</strong> and preprocessing. It uses multiple <strong>Conv2D and
+              MaxPooling2D</strong> layers to extract and reduce spatial features.
           </p>
+          <p> The final output comes from a <strong>Dense</strong> layer with one neuron and a <strong>sigmoid
+              activation</strong>, suitable for binary classification. Although softmax is typical for multi-class
+            tasks, sigmoid fits the binary nature of this model. </p>
           <div class="image-wrapper">
             <img src="assets/snippets/keras_architecture_snippet.svg" alt="YOLOv8 Classification Model Train Function">
           </div>
@@ -106,9 +106,11 @@
           <h2>Crop + Keras Classificator</h2>
           <p>
             The second Keras classifier employs the same architecture as the first. However, in this case, the input
-            images are preprocessed using the segmentation model trained under a semi-supervised paradigm based on the
-            YOLO framework. This preprocessing step aims to remove background noise, allowing the classifier to focus
-            more effectively on the relevant object within each image.
+            images are <strong>preprocessed</strong> using the segmentation model trained under a semi-supervised
+            paradigm based on the
+            YOLO framework. This preprocessing step aims to <strong>remove background noise</strong>, allowing the
+            classifier to focus
+            more effectively on the <strong>relevant</strong> object within each image.
           </p>
           <div class="image-wrapper">
             <img src="assets/images/keras/disc_background_transition.gif"
@@ -170,15 +172,16 @@
           <h1>Transfer Learning</h1>
           <h2>Extracting YOLO Backbone</h2>
           <p>
-            To extract the YOLO backbone from the segmentation model, the architecture had to be manually converted into
-            a set of layers compatible with the Keras framework. This involved reimplementing the Conv, C2f, and SPPF
-            blocks (along with their subcomponents) and transferring the corresponding weights into Keras-compatible
-            format.
+            To use the <strong>YOLO backbone</strong> in Keras, the original segmentation model architecture was
+            manually converted. This required reimplementing key blocks like <strong>Conv, C2f,</strong> and
+            <strong>SPPF</strong>, and transferring weights into a Keras-compatible format.
           </p>
+
           <p>
-            The table below presents the maximum and mean differences observed when passing a randomly generated tensor
-            through both the original YOLO backbone (implemented in PyTorch) and its Keras-based equivalent.
+            The table below shows the <strong>maximum and mean differences</strong> observed when comparing outputs from
+            the original PyTorch backbone and its Keras version using a random input tensor.
           </p>
+
           <div class="center-contents">
             <div class="table-wrapper">
               <p-table [value]="tlTableData" responsiveLayout="scroll">
@@ -219,23 +222,20 @@
           <h1>Keras Classification Results</h1>
           <h2>YOLO Backbone + Keras Classificator</h2>
           <p>
-            The initial phase of training is conducted over 100 epochs with the backbone network entirely frozen,
-            allowing updates only to the classification head. This strategy aims to stabilize the feature extraction
-            layers while focusing learning on the final classification layers.
+            The training begins with <strong>100 epochs</strong> where the <strong>backbone network is frozen</strong>,
+            allowing updates only to the classification head. This approach helps stabilize <strong>feature
+              extraction</strong> while focusing learning on classification.
           </p>
           <p>
-            During this stage, the learning progression is relatively slow. Moreover, a noticeable and growing
-            divergence between the training and validation loss curves suggests the early onset of overfitting. This
-            indicates that the model is beginning to memorize the training data rather than generalize effectively to
-            unseen samples.
+            Learning progresses slowly, and a growing gap between <strong>training and validation loss</strong>
+            indicates early <strong>overfitting</strong>, suggesting the model is memorizing rather than generalizing.
           </p>
           <p>
-            Such overfitting behavior is commonly observed in large and complex models. Due to their high capacity,
-            these models are capable of memorizing intricate details of the training dataset rather than learning to
-            generalize based on underlying patterns. This reinforces the importance of applying appropriate
-            regularization techniques and training strategies to mitigate overfitting and enhance generalization
-            performance.
+            This is typical of <strong>complex models</strong> with high capacity, which tend to memorize training
+            details. It highlights the need for effective <strong>regularization</strong> and training strategies to
+            improve generalization.
           </p>
+
         </div>
 
         <div class="result-column">
@@ -292,21 +292,19 @@
           <h2>Fine Tunning</h2>
 
           <p>
-            Fine-tuning involves gradually unfreezing the final layers of a pretrained model to adapt it more
-            effectively to a target dataset. This approach allows the model to retain general feature representations
-            learned from large-scale datasets while adapting higher-level representations to the specific task.
+            <strong>Fine-tuning</strong> involves gradually unfreezing the final layers of a pretrained model to adapt
+            it to a target dataset. This enables the model to retain <strong>general features</strong> from large-scale
+            data while adjusting higher-level representations to the task.
           </p>
           <p>
-            The original YOLO backbone consists of 10 layers, indexed from 0 to 9. In this experiment, layers were
-            unfrozen in groups of two. However, only the final two groups (i.e., the last four layers) were considered
-            for fine-tuning. This decision was made to preserve the benefits of transfer learning, as unfreezing
-            lower-level layers would compromise the general features learned during pretraining.
+            The <strong>YOLO backbone</strong> includes 10 layers (0–9). Layers were unfrozen in pairs, but only the
+            last four were fine-tuned to preserve the advantages of <strong>transfer learning</strong>, as modifying
+            lower layers could degrade learned general features.
           </p>
           <p>
-            Despite these efforts, the model exhibited increased signs of overfitting, as the base configuration was
-            already prone to this issue. Further training exacerbated the effect. Nonetheless, performance improvements
-            were still observed, suggesting that carefully unfreezing upper layers and extending training can yield to
-            better results.
+            Although this increased <strong>overfitting</strong>—already a concern with the base model—some
+            <strong>performance gains</strong> were still achieved, showing that selective unfreezing and extended
+            training can enhance results.
           </p>
 
           <div class="next-btn-div">

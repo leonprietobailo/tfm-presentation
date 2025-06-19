@@ -5,7 +5,7 @@ import { SlideshowSectionComponent } from "../../components/slideshow-section/sl
   selector: 'app-conclusion',
   imports: [SlideshowSectionComponent],
   templateUrl: './conclusion.component.html',
-  styleUrl: '../slide-main-styles.scss'
+  styleUrls: ['../slide-main-styles.scss', './conclusion.component.scss']
 })
 export class ConclusionComponent {
 

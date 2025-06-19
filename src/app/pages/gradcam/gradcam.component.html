@@ -6,13 +6,18 @@
         <div class="text-column">
           <h1>GradCAM</h1>
           <p>
-            Gradient-weighted Class Activation Mapping (Grad-CAM) is a prominent technique in Explainable Artificial Intelligence (XAI) that enhances the interpretability of convolutional neural networks (CNNs). It generates class-specific heatmaps that highlight the regions of an input image most influential in a model’s decision, enabling users to visualize and understand the reasoning behind predictions. Unlike earlier methods, Grad-CAM does not require changes to the model architecture or retraining, making it compatible with a wide range of pre-trained networks.
+            <strong>Grad-CAM</strong> is an <strong>XAI</strong> method that improves CNN interpretability by generating
+            <strong>class-specific heatmaps</strong>, highlighting image regions that influence predictions—without
+            altering the model or retraining.
           </p>
           <p>
-            The method operates by computing the gradient of the output for a target class with respect to the feature maps of a selected convolutional layer. These gradients are globally averaged to produce importance weights, which are then used to compute a weighted sum of the feature maps. Applying a ReLU activation isolates the positively contributing features, and the resulting heatmap is upsampled and overlaid on the original image to indicate areas of high relevance.
+            It calculates gradients of a target class with respect to feature maps, averages them into
+            <strong>importance weights</strong>, and applies <strong>ReLU</strong> to produce a heatmap overlaid on the
+            image.
           </p>
           <p>
-            Grad-CAM is particularly useful for model validation and debugging, as it helps determine whether a model is focusing on semantically meaningful regions or relying on irrelevant cues. In sensitive domains such as healthcare and autonomous systems, this transparency fosters trust and supports accountability. As part of the broader goals of XAI, Grad-CAM plays a crucial role in promoting the responsible deployment of deep learning models by making their internal decision processes more interpretable and accessible.
+            Grad-CAM aids in <strong>validation and debugging</strong>, ensuring models focus on meaningful regions. It
+            fosters <strong>trust and transparency</strong> in critical applications, supporting responsible AI use.
           </p>
 
         </div>
@@ -40,11 +45,20 @@
           <h1>GradCAM</h1>
           <h2>Experiment with Pre-trained DenseNet121</h2>
           <p>
-          Evaluation on the held-out test set confirmed that the network retained adequate predictive capability, validating the use of Grad-CAM for post-hoc interpretability. Heatmaps generated over the same test images consistently localized the most salient defect regions, mirroring the focal points a skilled human inspector would intuitively examine. This congruence between model attention and human reasoning substantiates the explanatory power of Grad-CAM and reinforces confidence in the automated system’s decision-making process.
-        </p>
+            Evaluation on the test set confirmed the model’s <strong>predictive performance</strong> and validated
+            <strong>Grad-CAM</strong> as an effective tool for <strong>post-hoc interpretability</strong>. Heatmaps
+            reliably highlighted key defect areas, aligning with regions a human inspector would focus on.
+          </p>
           <p>
-More challenging cases—those containing multiple subtle or diffuse defects—produced correspondingly dispersed activation patterns, indicating that the classifier aggregated evidence from several minor anomalies rather than relying on a single dominant feature. Although such heatmaps can appear less self-explanatory, they still expose the model’s internal weighting of ambiguous cues and thus remain valuable for debugging and refinement. Overall, the experiment demonstrates that Grad-CAM not only enhances the transparency of deep CNNs in industrial defect detection but also offers practical guidance for improving model reliability in complex visual scenarios.
-</p>
+            In complex cases with <strong>multiple subtle defects</strong>, activation maps appeared more dispersed,
+            showing the model aggregated minor cues. While less intuitive, these still offer insight into the model’s
+            reasoning and aid in <strong>debugging and refinement</strong>.
+          </p>
+          <p>
+            Overall, Grad-CAM enhances both <strong>transparency</strong> and reliability in industrial defect
+            detection, especially in visually complex scenarios.
+          </p>
+
           <div class="next-btn-div">
             <button class="next-btn" (click)="goNext()">
               Conclusion <span class="arrow">→</span>
@@ -59,16 +73,10 @@ More challenging cases—those containing multiple subtle or diffuse defects—p
             </div>
             <div class="gradcam-image-grid">
               @for (img of displayedImages; track img) {
-  <div class="zoom-wrapper">
-    <img
-      [src]="img"
-      alt="GradCAM"
-      class="gradcam-grid-img fade"
-      [class.show]="imagesVisible"
-      appZoomOnHover       
-      [zoomScale]="2"       
-    />
-  </div>
+              <div class="zoom-wrapper">
+                <img [src]="img" alt="GradCAM" class="gradcam-grid-img fade" [class.show]="imagesVisible" appZoomOnHover
+                  [zoomScale]="2" />
+              </div>
               }
 
             </div>

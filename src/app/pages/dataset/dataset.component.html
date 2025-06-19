@@ -32,27 +32,17 @@
             <div class="split-slide">
                 <div class="text-column">
                     <h1>Data Cleaning and Verification</h1>
-                    <p>
-                        Before working with the aforementioned dataset, it is essential to perform thorough validation
-                        and preprocessing. The primary objectives are to ensure the integrity of the dataset, to prevent
-                        any data leakage between the training and testing subsets (“train” and “test”), and to apply
-                        transformations to the file metadata that may facilitate tasks such as reconstructing the
-                        original directory structure.
-                    </p>
-                    <p>
-                        In this context, the following operations are carried out:
-                    </p>
+                    <p> Before using the dataset, it is crucial to validate its integrity, avoid data leakage between
+                        training and test sets, and extract metadata to help reconstruct the original directory
+                        structure. Key steps include:  </p>
+             
                     <ul>
-                        <li><strong>Duplicate Element Analysis:</strong> Potential data contamination between the
-                            training and testing sets is investigated to ensure that evaluations are conducted on data
-                            previously unseen by the model.</li>
-                        <li><strong>Grayscale Analysis:</strong> The dataset’s author states that the images are in
-                            grayscale, meaning each image contains only one channel instead of the standard three (RGB).
-                            Incorrect assumptions regarding this property may result in information loss or other
-                            inconsistencies during processing.</li>
-                        <li><strong>Unique Identifier Generation:</strong> The use of external dataset managers, such as
-                            Roboflow, may alter the original directory structure. Therefore, the initial structure is
-                            recorded in the file metadata to enable its later recovery or verification.</li>
+                        <li><strong>Duplicate Check:</strong> Ensure no overlap between training and test data to
+                            maintain evaluation integrity.</li>
+                        <li><strong>Grayscale Validation:</strong> Confirm that images are single-channel as expected to
+                            prevent processing errors.</li>
+                        <li><strong>Metadata Tagging:</strong> Preserve original directory structure through metadata in
+                            case of external tool alterations.</li>
                     </ul>
                 </div>
                 <div class="grid-wrapper">
