@@ -1,5 +1,48 @@
+@use '../../../styles/colors.scss' as c;
+
 .image-column {
     img {
-        width: 50%;
+         width: 80%;
     }
 }
+
+.resource-buttons {
+    display: flex;
+    flex-direction: row;
+    // flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    // align-items: flex-start;
+  
+    .cv-button {
+      display: inline-flex;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: c.$cv-white;
+      background: c.$cv-gradient;
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+       width: 50%;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      @include c.cv-shadow;
+  
+      img {
+        height: 2rem;
+        margin-right: 1rem;
+      }
+  
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px c.$cv-shadow;
+      }
+  
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 10px c.$cv-shadow;
+      }
+    }
+  }
+  
