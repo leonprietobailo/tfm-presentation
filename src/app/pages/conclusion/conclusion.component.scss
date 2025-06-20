@@ -1,9 +1,13 @@
 @use '../../../styles/colors.scss' as c;
 
 .image-column {
-    img {
-         width: 80%;
+    .elieen-collins-gif {
+         width: 50%;
     }
+}
+
+.factory-img {
+  width: 80%;
 }
 
 .resource-buttons {
